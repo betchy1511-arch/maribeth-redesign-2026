@@ -588,7 +588,7 @@ footer{border-top:1px solid var(--line);padding-block:40px 32px;overflow:hidden}
     window.__lenis=lenis;
     if(hasG){ lenis.on('scroll', ScrollTrigger.update); gsap.ticker.add(function(t){ lenis.raf(t*1000); }); gsap.ticker.lagSmoothing(0); }
     else { (function raf(t){ lenis.raf(t); requestAnimationFrame(raf); })(); }
-    $$('a[href^="#"]').forEach(function(a){ a.addEventListener('click',function(e){ var id=a.getAttribute('href'); if(id.length>1 && $(id)){ e.preventDefault(); lenis.scrollTo(id,{offset:-76}); } }); });
+    $$('a[href^="#"]').forEach(function(a){ a.addEventListener('click',function(e){ var id=a.getAttribute('href'); if(id.length>1 && $(id)){ e.preventDefault(); lenis.scrollTo(id,{offset:-76,force:true}); } }); });
   }
 
   /* nav: solid after hero top, hide on scroll down, show on up */
