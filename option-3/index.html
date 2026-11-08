@@ -141,6 +141,14 @@ p{margin:0}
 .portrait{position:relative;justify-self:center;width:100%;max-width:440px;padding:28px 0 40px}
 .portrait .frame{position:relative;aspect-ratio:558/662;border-radius:999px 999px 36px 36px;overflow:hidden;background:var(--photo-bg);box-shadow:var(--shadow)}
 .portrait .frame img{width:100%;height:100%;object-fit:cover;object-position:50% 15%}
+.hub{position:absolute;inset:0;display:grid;place-items:center;background:radial-gradient(circle at 50% 45%,var(--accent-soft) 0%,transparent 62%)}
+.hub-ring{position:absolute;left:50%;top:50%;border-radius:50%;border:1px solid var(--accent);transform:translate(-50%,-50%);opacity:.5;animation:hubPulse 4.5s ease-out infinite}
+.hub-ring.r1{width:38%;aspect-ratio:1}
+.hub-ring.r2{width:62%;aspect-ratio:1;border-style:dashed;opacity:.35;animation-delay:1.5s}
+.hub-ring.r3{width:86%;aspect-ratio:1;opacity:.2;animation-delay:3s}
+@keyframes hubPulse{0%{transform:translate(-50%,-50%) scale(.92);opacity:.6}70%{opacity:.15}100%{transform:translate(-50%,-50%) scale(1.08);opacity:0}}
+.hub-core{position:relative;width:30%;aspect-ratio:1;border-radius:50%;background:var(--accent);color:var(--on-accent);display:grid;place-content:center;text-align:center;font-weight:800;font-size:clamp(15px,1.6vw,20px);line-height:1.1;box-shadow:0 0 0 10px var(--accent-soft),0 20px 50px rgba(0,0,0,.25)}
+.hub-core b{display:block}
 .badge{position:absolute;left:-6px;bottom:30px;width:112px;height:112px;border-radius:50%;background:var(--surface);box-shadow:var(--shadow);display:grid;place-items:center}
 .badge svg{width:100%;height:100%;animation:spin 22s linear infinite}
 .badge text{font-family:var(--mono);font-size:8.6px;letter-spacing:2.2px;fill:var(--ink)}
@@ -344,7 +352,7 @@ footer{border-top:1px solid var(--line);padding-block:40px 32px;overflow:hidden}
 
 <header class="nav" id="nav">
   <div class="wrap">
-    <a class="logo" href="#home">Maribeth<i>.</i></a>
+    <a class="logo" href="#home">Maribeth</a>
     <nav aria-label="Main"><ul class="links" id="links">
       <li><a href="#home">Home</a></li>
       <li><a href="#services">Services</a></li>
@@ -376,7 +384,7 @@ footer{border-top:1px solid var(--line);padding-block:40px 32px;overflow:hidden}
     <div class="hero-grid">
       <div class="hero-copy">
         <span class="eyebrow" id="heroEyebrow">Maribeth Laureen Binuya, SEO and GEO specialist</span>
-        <h1 id="heroH1">Get Cited by ChatGPT, Ranked by Google and <em>Recommended by Perplexity</em></h1>
+        <h1 id="heroH1">Get Cited by <em>ChatGPT</em>, Ranked by <em>Google</em> and Recommended by <em>Perplexity</em></h1>
         <p class="sub" data-hfade>12 years in SEO, now working across vacation rentals, healthcare, law, restaurants and home services. I run agentic AI workflows and Generative Engine Optimization so your brand shows up in AI answers, not buried on page two.</p>
         <div class="ctas" data-hfade>
           <a class="btn btn-primary" href="#contact">Get My Free AI Visibility Read<span class="arr" aria-hidden="true"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 8h10M9 4l4 4-4 4"/></svg></span></a>
@@ -385,7 +393,7 @@ footer{border-top:1px solid var(--line);padding-block:40px 32px;overflow:hidden}
         <p class="note" data-hfade>No obligation. A short, plain-English read on where you stand in Google and in AI answers.</p>
       </div>
       <div class="portrait" id="portrait">
-        <div class="frame"><img src="../img/banner-img-558x662.png" alt="Maribeth Laureen Binuya" width="558" height="662"></div>
+        <div class="frame"><div class="hub" aria-hidden="true"><span class="hub-ring r1"></span><span class="hub-ring r2"></span><span class="hub-ring r3"></span><span class="hub-core"><b>Your</b><b>Brand</b></span></div></div>
         <span class="ai" aria-hidden="true" style="left:0;top:14%"><i></i>ChatGPT</span>
         <span class="ai" aria-hidden="true" style="right:0;top:6%"><i></i>Perplexity</span>
         <span class="ai" aria-hidden="true" style="right:-2%;top:34%"><i></i>Google</span>
@@ -670,7 +678,7 @@ footer{border-top:1px solid var(--line);padding-block:40px 32px;overflow:hidden}
 
 <footer>
   <div class="wrap">
-    <div class="big-name" aria-hidden="true">Maribeth Laureen<em>.</em></div>
+    <div class="big-name" aria-hidden="true">Maribeth Laureen</div>
     <div class="foot-row"><span>&copy; 2026 Maribeth Laureen Binuya</span><span>SEO, GEO, Agentic AI and Web Design</span></div>
   </div>
 </footer>
@@ -797,7 +805,7 @@ footer{border-top:1px solid var(--line);padding-block:40px 32px;overflow:hidden}
       .from('#portrait .frame',{y:60,scale:.94,opacity:0,duration:1.4,ease:'expo.out'},'-=1.2')
       .from('#portrait .ai, #portrait .badge',{scale:.6,opacity:0,duration:.8,stagger:.06,ease:'back.out(1.7)'},'-=.9')
       .from('.hs',{y:30,opacity:0,duration:.8,stagger:.08,clearProps:'transform,opacity'},'-=.8');
-    gsap.to('#portrait .frame img',{yPercent:6,ease:'none',scrollTrigger:{trigger:'#home',start:'top top',end:'bottom top',scrub:true}});
+    gsap.to('#portrait .hub-core',{yPercent:-10,ease:'none',scrollTrigger:{trigger:'#home',start:'top top',end:'bottom top',scrub:true}});
 
     /* headings and fades */
     $$('[data-split]').forEach(function(h){ var ws=splitWords(h); gsap.from(ws,{yPercent:110,duration:1,ease:'power4.out',stagger:.05,scrollTrigger:{trigger:h,start:'top 86%'}}); });
