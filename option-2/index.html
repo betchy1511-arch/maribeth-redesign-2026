@@ -709,7 +709,7 @@ footer{border-top:1.5px solid var(--ink);padding-block:48px 32px;overflow:hidden
     window.__lenis=lenis;
     if(hasG){ lenis.on('scroll', ScrollTrigger.update); gsap.ticker.add(function(t){ lenis.raf(t*1000); }); gsap.ticker.lagSmoothing(0); }
     else { (function raf(t){ lenis.raf(t); requestAnimationFrame(raf); })(); }
-    $$('a[href^="#"]').forEach(function(a){ a.addEventListener('click',function(e){ var id=a.getAttribute('href'); if(id.length>1 && $(id)){ e.preventDefault(); lenis.scrollTo(id,{offset:-78,force:true}); } }); });
+    $$('a[href^="#"]').forEach(function(a){ a.addEventListener('click',function(e){ var id=a.getAttribute('href'); if(id.length>1 && $(id)){ e.preventDefault(); requestAnimationFrame(function(){ lenis.scrollTo(id,{offset:-78,force:true}); }); } }); });
   }
   function scrollToY(y, instant){
     if(lenis){ lenis.scrollTo(y,{immediate:!!instant, duration:1.1}); }
