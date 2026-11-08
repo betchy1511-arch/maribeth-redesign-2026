@@ -61,6 +61,7 @@ p{margin:0}
 /* nav */
 .nav{position:fixed;left:0;right:0;top:0;z-index:100;padding-top:env(safe-area-inset-top,0px);transition:background .35s,border-color .35s,transform .45s cubic-bezier(.2,.7,.2,1);border-bottom:1px solid transparent}
 .nav.solid{background:rgba(14,12,11,.78);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-bottom-color:var(--line)}
+.nav:has(.links.open){backdrop-filter:none!important;-webkit-backdrop-filter:none!important;transform:none!important;background:transparent!important}
 .nav.hide{transform:translateY(-100%)}
 .nav .wrap{display:flex;align-items:center;justify-content:space-between;gap:20px;min-height:76px}
 .logo{font-family:var(--serif);font-weight:700;font-size:26px;text-decoration:none;letter-spacing:-.01em}
