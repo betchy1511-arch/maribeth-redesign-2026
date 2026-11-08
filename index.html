@@ -95,7 +95,7 @@ img{max-width:100%;display:block}
 .cta-row{display:flex;flex-wrap:wrap;gap:12px}
 .proof{display:flex;flex-wrap:wrap;gap:12px 32px;padding-top:8px}
 .proof div{display:grid}
-.proof b{font-family:var(--display);font-size:34px;line-height:1.1;font-variant-numeric:tabular-nums}
+.proof b{font-family:var(--display);font-size:34px;line-height:1.1;font-variant-numeric:lining-nums tabular-nums}
 .proof span{font-size:14px;color:var(--ink-2)}
 .hero-visual{position:relative;min-width:0}
 .portrait{width:min(380px,100%);aspect-ratio:558/662;margin-left:auto;border-radius:var(--r-card);overflow:hidden;background:var(--sand)}
@@ -109,9 +109,9 @@ img{max-width:100%;display:block}
 .ai-label{font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-2);display:flex;justify-content:space-between}
 @keyframes blink{50%{opacity:0}}
 @media (max-width:880px){
-  .hero .wrap{grid-template-columns:1fr;gap:72px}
+  .hero .wrap{grid-template-columns:1fr;gap:40px}
   .portrait{margin:0 auto;width:min(320px,80%)}
-  .ai-card{left:50%;transform:translateX(-50%);bottom:-48px}
+  .ai-card{position:relative;left:auto;bottom:auto;margin:-40px auto 0;width:min(340px,100%)}
 }
 
 /* certifications */
@@ -151,7 +151,7 @@ img{max-width:100%;display:block}
 .job{position:relative;display:grid;gap:10px}
 .job::before{content:"";position:absolute;left:-36px;top:6px;width:16px;height:16px;border-radius:50%;background:var(--cream);border:3px solid var(--terra)}
 .band.alt .job::before{background:var(--sand)}
-.job .when{font-size:14px;font-weight:600;color:var(--terra-strong)}
+.job .when{font-size:14px;font-weight:600;color:var(--terra-strong);font-variant-numeric:lining-nums}
 :root[data-theme="dark"] .job .when{color:var(--terra)}
 @media (prefers-color-scheme: dark){:root:not([data-theme="light"]) .job .when{color:var(--terra)}}
 .job h3{font-family:var(--display);font-size:26px;font-weight:600}
@@ -217,7 +217,7 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px}
 .reveal.pre{opacity:0;transform:translateY(18px)}
 .hero-in{animation:rise .8s ease both}
 .hero-in.d2{animation-delay:.12s}.hero-in.d3{animation-delay:.24s}.hero-in.d4{animation-delay:.36s}
-@keyframes rise{from{opacity:.001;transform:translateY(14px)}}
+@keyframes rise{from{transform:translateY(14px)}}
 @media (prefers-reduced-motion: reduce){
   *,*::before,*::after{animation:none!important;transition:none!important;scroll-behavior:auto!important}
   .reveal.pre{opacity:1;transform:none}
@@ -432,8 +432,8 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px}
     <div class="work">
       <article class="case wide reveal">
         <div class="charts">
-          <img src="img/portfolio-img-3-490x290.jpg" alt="Search Console performance chart showing clicks climbing after an SEO program started" loading="lazy">
-          <img src="img/portfolio-img-6-490x290.jpg" alt="Search Console chart marking a requested web redesign and the traffic dip and recovery after it" loading="lazy">
+          <img src="img/portfolio-img-3-490x290.jpg" alt="Search Console performance chart showing clicks climbing after an SEO program started">
+          <img src="img/portfolio-img-6-490x290.jpg" alt="Search Console chart marking a requested web redesign and the traffic dip and recovery after it">
         </div>
         <div class="body">
           <span class="kind">Search Console proof</span>
@@ -442,19 +442,19 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px}
         </div>
       </article>
       <article class="case reveal">
-        <figure><img src="img/portfolio-vTNS.jpg" alt="Plumbing company homepage with a water heater installation hero and trust badges" loading="lazy"></figure>
+        <figure><img src="img/portfolio-vTNS.jpg" alt="Plumbing company homepage with a water heater installation hero and trust badges"></figure>
         <div class="body"><span class="kind">Plumbing · Full site</span><h3>Plumbing Company Website</h3><p>Designed the layout and visual identity for a "Gold Standard" brand, led content for service and location pages, and built a clear path from service discovery to booking.</p></div>
       </article>
       <article class="case reveal">
-        <figure><img src="img/portfolio-van1.jpg" alt="Protection dog breeder homepage with a dark hero and trust logos" loading="lazy"></figure>
+        <figure><img src="img/portfolio-van1.jpg" alt="Protection dog breeder homepage with a dark hero and trust logos"></figure>
         <div class="body"><span class="kind">Protection Dogs · Full site</span><h3>Protection Dogs Website</h3><p>Led the design for an engaging, easy-to-use site, applied conversion techniques, and worked with the developers to deliver it.</p></div>
       </article>
       <article class="case reveal">
-        <figure><img src="img/portfolio-img-4-490x290.jpg" alt="House painting company homepage with service cards and review badges" loading="lazy"></figure>
+        <figure><img src="img/portfolio-img-4-490x290.jpg" alt="House painting company homepage with service cards and review badges"></figure>
         <div class="body"><span class="kind">Painting · Redesign</span><h3>Painting Company Website</h3><p>Handled design and CRO to brand standards, and migrated every URL from the old site to the new design without losing pages.</p></div>
       </article>
       <article class="case reveal">
-        <figure><img src="img/portfolio-img-1-490x290.jpg" alt="Medical marijuana card website hero with state selector and approval buttons" loading="lazy"></figure>
+        <figure><img src="img/portfolio-img-1-490x290.jpg" alt="Medical marijuana card website hero with state selector and approval buttons"></figure>
         <div class="body"><span class="kind">Healthcare · Landing pages</span><h3>Medical Marijuana Website</h3><p>Handled design and CRO for state landing pages, working with the development team to hit the goals.</p></div>
       </article>
     </div>
