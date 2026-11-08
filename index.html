@@ -23,14 +23,14 @@
 @media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
   --cream:#1D1814; --sand:#26201B; --card:#2D2620;
   --ink:#F4ECE2; --ink-2:#C9BCAE; --line:#3D342C;
-  --terra:#D9946D; --terra-strong:#B86F45; --terra-hover:#C97E52; --on-terra:#FFFFFF;
+  --terra:#D9946D; --terra-strong:#9E5E38; --terra-hover:#87502F; --on-terra:#FFFFFF;
   --sage:#9FB393; --sage-ink:#B9CCAE;
   --shadow:0 4px 20px rgba(0,0,0,.35); --shadow-up:0 8px 30px rgba(0,0,0,.5);
   color-scheme:dark }}
 :root[data-theme="dark"]{
   --cream:#1D1814; --sand:#26201B; --card:#2D2620;
   --ink:#F4ECE2; --ink-2:#C9BCAE; --line:#3D342C;
-  --terra:#D9946D; --terra-strong:#B86F45; --terra-hover:#C97E52; --on-terra:#FFFFFF;
+  --terra:#D9946D; --terra-strong:#9E5E38; --terra-hover:#87502F; --on-terra:#FFFFFF;
   --sage:#9FB393; --sage-ink:#B9CCAE;
   --shadow:0 4px 20px rgba(0,0,0,.35); --shadow-up:0 8px 30px rgba(0,0,0,.5);
   color-scheme:dark }
@@ -49,6 +49,10 @@ img{max-width:100%;display:block}
 :focus-visible{outline:3px solid var(--terra);outline-offset:3px;border-radius:2px}
 .wrap{max-width:1200px;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
 .band{padding-block:96px}
+section[id]{scroll-margin-top:84px}
+.skip{position:absolute;left:16px;top:-60px;z-index:70;background:var(--terra-strong);color:var(--on-terra);padding:10px 16px;border-radius:var(--r-btn);font-weight:600}
+.skip:focus{top:12px}
+.band.alt .eyebrow{color:var(--terra-hover)}
 .band.alt{background:var(--sand)}
 .eyebrow{font-size:13px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--terra-strong)}
 :root[data-theme="dark"] .eyebrow{color:var(--terra)}
@@ -74,9 +78,9 @@ img{max-width:100%;display:block}
 .links{display:flex;align-items:center;gap:28px;list-style:none;margin:0;padding:0}
 .links a{text-decoration:none;font-weight:500;font-size:15px;color:var(--ink-2)}
 .links a:hover,.links a[aria-current]{color:var(--ink)}
-.links .btn{color:var(--on-terra);min-height:42px;padding:10px 18px}
+.links a.btn,.links a.btn:hover{color:var(--on-terra);min-height:42px;padding:10px 18px}
 .menu-btn{display:none;background:none;border:1px solid var(--line);border-radius:var(--r-btn);width:44px;height:44px;color:var(--ink);cursor:pointer}
-@media (max-width:880px){
+@media (max-width:1020px){
   .menu-btn{display:inline-grid;place-items:center}
   .links{position:absolute;top:100%;left:0;right:0;flex-direction:column;align-items:stretch;gap:0;background:var(--cream);border-bottom:1px solid var(--line);padding:8px max(16px,env(safe-area-inset-right,0px)) 16px max(16px,env(safe-area-inset-left,0px))}
   .links:not(.open){display:none}
@@ -194,7 +198,7 @@ details.more[open] summary{margin-bottom:8px}
 form{background:var(--card);border-radius:var(--r-card);box-shadow:var(--shadow);padding:32px;display:grid;gap:16px}
 label{font-size:14px;font-weight:500;display:grid;gap:6px}
 input,select,textarea{font:inherit;font-size:16px;color:var(--ink);background:var(--card);border:1px solid var(--line);border-radius:var(--r-btn);padding:12px 14px;width:100%}
-input:focus,select:focus,textarea:focus{outline:none;border-color:var(--terra)}
+input:focus,select:focus,textarea:focus{outline:2px solid var(--terra);outline-offset:1px;border-color:var(--terra)}
 textarea{min-height:110px;resize:vertical}
 .row2{display:grid;grid-template-columns:1fr 1fr;gap:16px}
 .form-note{font-size:14px;color:var(--sage-ink);min-height:1.4em}
@@ -206,10 +210,10 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px}
 /* sticky mobile CTA, page gets matching bottom padding so nothing is covered */
 .mcta{display:none}
 @media (max-width:700px){
-  .mcta{display:block;position:fixed;left:0;right:0;bottom:0;z-index:55;background:var(--cream);border-top:1px solid var(--line);padding:10px max(16px,env(safe-area-inset-right,0px)) calc(10px + env(safe-area-inset-bottom,0px)) max(16px,env(safe-area-inset-left,0px));transform:translateY(110%);transition:transform .3s}
-  .mcta.show{transform:none}
+  .mcta{display:block;position:fixed;left:0;right:0;bottom:0;z-index:55;background:var(--cream);border-top:1px solid var(--line);padding:10px max(16px,env(safe-area-inset-right,0px)) calc(10px + env(safe-area-inset-bottom,0px)) max(16px,env(safe-area-inset-left,0px));transform:translateY(110%);visibility:hidden;transition:transform .3s,visibility .3s}
+  .mcta.show{transform:none;visibility:visible}
   .mcta .btn{width:100%}
-  body{padding-bottom:76px}
+  body{padding-bottom:calc(80px + env(safe-area-inset-bottom,0px))}
 }
 
 /* scroll reveal: only applied by script to content below the first screen */
@@ -227,33 +231,34 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px}
 <body>
 
 
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"Person","name":"Maribeth Laureen Binuya","jobTitle":"Senior Digital Marketing Manager, SEO and GEO","worksFor":{"@type":"Organization","name":"Infintech Designs","url":"https://www.infintechdesigns.com/"},"url":"https://www.maribethlaureen.info/","knowsAbout":["Search engine optimization","Generative engine optimization","Schema markup","Agentic AI workflows","Conversion rate optimization","Web design"]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Person","name":"Maribeth Laureen Binuya","jobTitle":"Senior Digital Marketing Manager","worksFor":{"@type":"Organization","name":"Infintech Designs","url":"https://www.infintechdesigns.com/"},"url":"https://www.maribethlaureen.info/","knowsAbout":["Search engine optimization","Generative engine optimization","Schema markup","Agentic AI workflows","Conversion rate optimization","Web design"]}</script>
 
+<a class="skip" href="#main">Skip to content</a>
 <header class="nav" id="nav">
   <div class="wrap">
     <a class="logo" href="#home">Maribeth<span>.</span></a>
     <button class="menu-btn" id="menuBtn" aria-expanded="false" aria-controls="links" aria-label="Open menu">
       <svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 5h16M2 10h16M2 15h16"/></svg>
     </button>
-    <ul class="links" id="links">
-      <li><a href="#home" aria-current="page">Home</a></li>
+    <nav aria-label="Main"><ul class="links" id="links">
+      <li><a href="#home">Home</a></li>
       <li><a href="#services">Services</a></li>
       <li><a href="#how">How I Work</a></li>
       <li><a href="#experience">Experience</a></li>
       <li><a href="#work">Work</a></li>
       <li><a href="#contact">Contact</a></li>
       <li><a class="btn btn-primary" href="#contact">Get My Free AI Visibility Read</a></li>
-    </ul>
+    </ul></nav>
   </div>
 </header>
 
-<main>
+<main id="main">
 <section class="hero" id="home">
   <div class="wrap">
     <div class="hero-copy">
       <p class="eyebrow hero-in">Maribeth Laureen Binuya · SEO, GEO and Agentic AI</p>
-      <h1 class="hero-in d2">Get cited by ChatGPT. Ranked by Google. <em>Recommended by Perplexity.</em></h1>
-      <p class="lede hero-in d3">12 years building SEO programs for vacation rentals, healthcare, law firms, restaurants and home services. Today I run agentic AI workflows and Generative Engine Optimization so your brand shows up in AI answers, not buried on page two.</p>
+      <h1 class="hero-in d2">Get Cited by ChatGPT, Ranked by Google and <em>Recommended by Perplexity</em></h1>
+      <p class="lede hero-in d3">12 years in SEO, now working across vacation rentals, healthcare, law, restaurants and home services. I run agentic AI workflows and Generative Engine Optimization so your brand shows up in AI answers, not buried on page two.</p>
       <div class="hero-in d4" style="display:grid;gap:10px">
         <div class="cta-row">
           <a class="btn btn-primary" href="#contact">Get My Free AI Visibility Read</a>
@@ -261,19 +266,19 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px}
         </div>
         <p class="reducer">No obligation. A short, plain-English read on where you stand in Google and in AI answers.</p>
       </div>
-      <div class="proof hero-in d4" aria-label="Experience in numbers">
+      <div class="proof hero-in d4" role="group" aria-label="Experience in numbers">
         <div><b data-count="12">12</b><span>years in SEO</span></div>
         <div><b data-count="20" data-suffix="+">20+</b><span>sites audited and managed</span></div>
-        <div><b data-count="40" data-suffix="%">40%</b><span>faster content with AI workflows</span></div>
+        <div><b data-count="40" data-suffix="%">40%</b><span>less content production time (approx.)</span></div>
       </div>
     </div>
     <div class="hero-visual hero-in d3">
       <div class="portrait"><img src="img/banner-img-558x662.png" alt="Maribeth Laureen Binuya, SEO and GEO specialist" width="558" height="662"></div>
-      <div class="ai-card" aria-label="Example of an AI assistant answer">
+      <div class="ai-card" role="group" aria-label="Example of an AI assistant answer">
         <div class="ai-label"><span>AI answer</span><span>example</span></div>
         <div class="ai-q">Who can help my business show up in ChatGPT answers?</div>
         <div class="ai-a" id="aiA">Look for a specialist in Generative Engine Optimization: someone who builds entity coverage, schema and citation-worthy content so AI tools can name your brand.</div>
-        <span class="cite" id="cite"><svg width="12" height="12" viewBox="0 0 12 12" fill="currentColor"><circle cx="6" cy="6" r="6"/></svg> Source: your website</span>
+        <span class="cite" id="cite"><svg width="12" height="12" viewBox="0 0 12 12" fill="currentColor"><circle cx="6" cy="6" r="6"/></svg> Goal: your site as the cited source</span>
       </div>
     </div>
   </div>
@@ -283,12 +288,12 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px}
   <div class="wrap">
     <p>Certified in Customer Value Optimization, Analytics, Customer Acquisition, Search Marketing, Optimization and Testing, and Semrush Academy</p>
     <div class="cert-row">
-      <img src="img/customer-value-optimization.png" alt="Customer Value Optimization certification badge">
-      <img src="img/analytics-data-specialist.png" alt="Analytics and Data Specialist certification badge">
-      <img src="img/customer-acquisition.png" alt="Customer Acquisition certification badge">
-      <img src="img/search-marketing-specialist.png" alt="Search Marketing Specialist certification badge">
-      <img src="img/optimization-and-testing-specialist.png" alt="Optimization and Testing Specialist certification badge">
-      <img src="img/semrush-academy.png" alt="Semrush Academy certification badge">
+      <img src="img/customer-value-optimization.png" width="64" height="64" alt="Customer Value Optimization certification badge">
+      <img src="img/analytics-data-specialist.png" width="64" height="64" alt="Analytics and Data Specialist certification badge">
+      <img src="img/customer-acquisition.png" width="64" height="64" alt="Customer Acquisition certification badge">
+      <img src="img/search-marketing-specialist.png" width="64" height="64" alt="Search Marketing Specialist certification badge">
+      <img src="img/optimization-and-testing-specialist.png" width="64" height="64" alt="Optimization and Testing Specialist certification badge">
+      <img src="img/semrush-academy.png" width="64" height="64" alt="Semrush Academy certification badge">
     </div>
   </div>
 </section>
@@ -334,17 +339,17 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px}
     <div class="head reveal" style="margin-bottom:0">
       <p class="eyebrow">How I Work</p>
       <h2>An AI-Assisted System With a Human in Charge</h2>
-      <p class="lede">I wrote my team's playbooks and turned each one into an AI skill, so every task follows the same proven steps. AI does the heavy lifting. I make the calls.</p>
-      <div class="sop" aria-label="Playbooks I wrote">
+      <p class="lede">I wrote my team's playbooks and turned each one into an AI skill, so every task follows the same written steps. AI does the heavy lifting. I make the calls.</p>
+      <div class="sop" role="group" aria-label="Playbooks I wrote">
         <span>Blog Creation</span><span>Topic Clusters</span><span>Metas and H1s</span><span>Website Audit</span><span>Schema</span><span>Client Onboarding</span>
       </div>
     </div>
     <ol class="steps">
-      <li class="reveal"><div><h3>Read the client side first</h3><p>Brand guide, project threads, past requests and approvals, before any work starts.</p></div></li>
-      <li class="reveal"><div><h3>Research with real data</h3><p>Search Console, Ahrefs, live search results and People Also Ask, checked the same day.</p></div></li>
-      <li class="reveal"><div><h3>Build with AI, by the playbook</h3><p>Drafts, audits, schema and fix lists produced by AI agents that follow the written steps.</p></div></li>
-      <li class="reveal"><div><h3>Cross-check before it ships</h3><p>Two independent AI reviewers check every claim and number, then I review the result.</p></div></li>
-      <li class="reveal"><div><h3>Verify on the live site</h3><p>Every change is read back on the live page, on desktop and phone, before I call it done.</p></div></li>
+      <li class="reveal"><div><h3>Read the Client Side First</h3><p>Brand guide, project threads, past requests and approvals, before any work starts.</p></div></li>
+      <li class="reveal"><div><h3>Research With Real Data</h3><p>Search Console, Ahrefs, live search results and People Also Ask, checked the same day.</p></div></li>
+      <li class="reveal"><div><h3>Build With AI by the Playbook</h3><p>Drafts, audits, schema and fix lists produced by AI agents that follow the written steps.</p></div></li>
+      <li class="reveal"><div><h3>Cross-Check Before It Ships</h3><p>Two independent AI reviewers check the claims and numbers, then I review the result.</p></div></li>
+      <li class="reveal"><div><h3>Verify on the Live Site</h3><p>Changes are read back on the live page, and checked on desktop and phone where it matters, before I call them done.</p></div></li>
     </ol>
   </div>
 </section>
@@ -358,32 +363,6 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px}
     </div>
     <div class="timeline" id="timeline">
       <span class="fill" aria-hidden="true"></span>
-
-      <div class="job reveal">
-        <span class="when">Feb 2014 to Present</span>
-        <h3>Senior Digital Marketing Manager</h3>
-        <p class="org">Infintech Designs · Web Design and Digital Marketing Agency</p>
-        <ul>
-          <li><span class="new">New</span><b>Lead SEO and content for a white-label agency portfolio</b> spanning dental, medical, personal injury law, restaurants and wellness brands.</li>
-          <li><span class="new">New</span><b>Wrote the team's six standard procedures</b> (blog creation, topic clusters, metas and H1s, website audits, schema, client onboarding) and turned each into an AI skill the team runs.</li>
-          <li><span class="new">New</span><b>Built AI quality gates:</b> every report, page and push is checked by two independent AI reviewers before it reaches a client.</li>
-          <li><span class="new">New</span><b>Automated monitoring:</b> daily priority-task sweeps, weekly site checks (phone links, forms, GA4, Search Console, schema), content decay checks and security scans.</li>
-          <li><span class="new">New</span><b>Direct an outside development team</b> with screenshot-backed fix requests, and review redesigns before they go to clients.</li>
-          <li><span class="new">New</span><b>Write compliance-aware copy</b> for regulated industries, including dental specialty advertising and contractor licensing rules.</li>
-          <li>Senior SEO lead: keyword strategy, technical audits, link development and CRO testing.</li>
-          <li>Pioneered the agency's AI workflow integration, cutting content production time by roughly 40 percent without losing quality.</li>
-        </ul>
-        <details class="more"><summary>Show 6 more</summary>
-          <ul>
-            <li>Web design lead on landing page and full-site projects: visual design, conversion architecture and dev handoff.</li>
-            <li>Built content systems for both classic search and AI parsing: entity coverage, schema and internal linking.</li>
-            <li>Run technical SEO audits across 20+ local service business websites, closing Search Console indexing and schema errors.</li>
-            <li>Consolidate keyword-cannibalized content across multi-page clusters while preserving rankings.</li>
-            <li>Lead full site redesigns and staging builds, from templating through pre-launch QA.</li>
-            <li>Coach junior marketers and writers on modern SEO and GEO process.</li>
-          </ul>
-        </details>
-      </div>
 
       <div class="job reveal">
         <span class="when">Aug 2024 to Present</span>
@@ -401,6 +380,32 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px}
             <li>Coordinate developer fixes through Search Console monitoring and structured issue tickets.</li>
             <li>Set up Google Tag Manager, GA4 and conversion tracking across the portfolio.</li>
             <li>Deploy schema markup and build topic-cluster content, including pillar pages.</li>
+          </ul>
+        </details>
+      </div>
+
+      <div class="job reveal">
+        <span class="when">Feb 2014 to Present</span>
+        <h3>Senior Digital Marketing Manager</h3>
+        <p class="org">Infintech Designs · Web Design and Digital Marketing Agency</p>
+        <ul>
+          <li><span class="new">New</span><b>Handle SEO and content for an agency client portfolio</b> spanning dental, medical, personal injury law, restaurants and wellness brands.</li>
+          <li><span class="new">New</span><b>Wrote the team's six standard procedures</b> (blog creation, topic clusters, metas and H1s, website audits, schema, client onboarding) and turned each into an AI skill the team runs.</li>
+          <li><span class="new">New</span><b>Built an AI quality gate:</b> deliverables are checked by two independent AI reviewers before they go to a client.</li>
+          <li><span class="new">New</span><b>Automated monitoring:</b> daily priority-task sweeps, weekly site checks (phone links, forms, GA4, Search Console, schema), content decay checks and security scans.</li>
+          <li><span class="new">New</span><b>Send screenshot-backed fix requests</b> to an outside development team, and review redesigns before they go to clients.</li>
+          <li><span class="new">New</span><b>Write compliance-aware copy</b> for regulated industries, including dental specialty advertising and contractor licensing rules.</li>
+          <li>Senior SEO lead: keyword strategy, technical audits, link development and CRO testing.</li>
+          <li>Pioneered the agency's AI workflow integration, cutting content production time by roughly 40 percent without losing quality.</li>
+        </ul>
+        <details class="more"><summary>Show 6 more</summary>
+          <ul>
+            <li>Web design lead on landing page and full-site projects: visual design, conversion architecture and dev handoff.</li>
+            <li>Built content systems for both classic search and AI parsing: entity coverage, schema and internal linking.</li>
+            <li>Run technical SEO audits across 20+ local service business websites, closing Search Console indexing and schema errors.</li>
+            <li>Consolidate keyword-cannibalized content across multi-page clusters while preserving rankings.</li>
+            <li>Lead full site redesigns and staging builds, from templating through pre-launch QA.</li>
+            <li>Coach junior marketers and writers on modern SEO and GEO process.</li>
           </ul>
         </details>
       </div>
@@ -426,19 +431,19 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px}
   <div class="wrap">
     <div class="head reveal">
       <p class="eyebrow">Selected Work</p>
-      <h2>Sites I Designed, Fixed and Grew</h2>
-      <p class="lede">Project examples from my agency work. Business names are left off the case studies.</p>
+      <h2>Sites I Designed and Fixed</h2>
+      <p class="lede">Project examples from my agency work.</p>
     </div>
     <div class="work">
       <article class="case wide reveal">
         <div class="charts">
           <img src="img/portfolio-img-3-490x290.jpg" alt="Search Console performance chart showing clicks climbing after an SEO program started">
-          <img src="img/portfolio-img-6-490x290.jpg" alt="Search Console chart marking a requested web redesign and the traffic dip and recovery after it">
+          <img src="img/portfolio-img-6-490x290.jpg" alt="Search Console chart marking a requested web redesign and the dip in clicks after the new site went live">
         </div>
         <div class="body">
           <span class="kind">Search Console proof</span>
-          <h3>Traffic Recovery After a Redesign</h3>
-          <p>When clicks dropped after a site migration, I traced it in Search Console, checked every redirect and internal link, and re-optimized the affected pages. The charts show the dip and the climb back.</p>
+          <h3>Search Console Proof From Two Programs</h3>
+          <p>The first chart shows clicks climbing after my SEO program started. The second marks a requested redesign and the dip in clicks after launch, which I traced in Search Console by checking every redirect and internal link, then re-optimized the affected pages.</p>
         </div>
       </article>
       <article class="case reveal">
@@ -466,7 +471,7 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px}
         <li><a href="https://www.kindhomesolutions.co/" target="_blank" rel="noopener">kindhomesolutions.co</a></li>
         <li><a href="https://www.infintechdesigns.com/web-design-seo/" target="_blank" rel="noopener">infintechdesigns.com/web-design-seo</a></li>
       </ul></div>
-      <div><h3>Sites I Manage</h3><ul>
+      <div><h3>Other Sites I Have Worked On</h3><ul>
         <li><a href="https://www.bigeasyroofing.com/" target="_blank" rel="noopener">bigeasyroofing.com</a></li>
         <li><a href="https://www.turnkeyroofers.com/" target="_blank" rel="noopener">turnkeyroofers.com</a></li>
         <li><a href="https://www.bigeasyroofteam.com/" target="_blank" rel="noopener">bigeasyroofteam.com</a></li>
@@ -486,7 +491,6 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px}
       <ul class="trust">
         <li>12 years in SEO, now focused on GEO and agentic AI.</li>
         <li>Vacation rentals, healthcare, law, restaurants and home services.</li>
-        <li>Clients across the US.</li>
       </ul>
     </div>
     <form id="leadForm" class="reveal" novalidate>
@@ -526,6 +530,9 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px}
     menuBtn.setAttribute('aria-expanded', open);
     menuBtn.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
   });
+  document.addEventListener('keydown', function(e){
+    if (e.key === 'Escape' && links.classList.contains('open')) { links.classList.remove('open'); menuBtn.setAttribute('aria-expanded','false'); menuBtn.focus(); }
+  });
   links.addEventListener('click', function(e){
     if (e.target.closest('a')) { links.classList.remove('open'); menuBtn.setAttribute('aria-expanded','false'); }
   });
@@ -554,7 +561,7 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px}
   /* AI answer types itself, then the citation appears */
   var aiA = document.getElementById('aiA'), cite = document.getElementById('cite');
   if (!reduce) {
-    var full = aiA.textContent; aiA.textContent = ''; cite.classList.add('wait');
+    var full = aiA.textContent; aiA.style.minHeight = aiA.offsetHeight + 'px'; aiA.textContent = ''; cite.classList.add('wait');
     var caret = document.createElement('span'); caret.className = 'caret';
     var txt = document.createTextNode(''); aiA.appendChild(txt); aiA.appendChild(caret);
     var i = 0;
