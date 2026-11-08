@@ -74,6 +74,8 @@ section[id]{scroll-margin-top:84px}
 .nav.scrolled{border-bottom-color:var(--line)}
 .nav .wrap{display:flex;align-items:center;justify-content:space-between;gap:16px;min-height:72px}
 .nav nav{display:contents}
+.links a.btn{font-weight:700}
+.links li a.btn{display:flex;justify-content:center}
 .logo{font-family:var(--display);font-weight:700;font-size:24px;text-decoration:none;letter-spacing:-.01em}
 .logo span{color:var(--terra)}
 .links{display:flex;align-items:center;gap:28px;list-style:none;margin:0;padding:0}
@@ -341,7 +343,7 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px}
     <div class="head reveal" style="margin-bottom:0">
       <p class="eyebrow">How I Work</p>
       <h2>An AI-Assisted System With a Human in Charge</h2>
-      <p class="lede">I wrote my team's playbooks and turned each one into an AI skill, so every task follows the same written steps. AI does the heavy lifting. I make the calls.</p>
+      <p class="lede">I wrote my team's playbooks and turned each one into an AI skill, so each type of task follows the same written steps. AI does the heavy lifting. I make the calls.</p>
       <div class="sop" role="group" aria-label="Playbooks I wrote">
         <span>Blog Creation</span><span>Topic Clusters</span><span>Metas and H1s</span><span>Website Audit</span><span>Schema</span><span>Client Onboarding</span>
       </div>
@@ -396,7 +398,7 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px}
           <li><span class="new">New</span><b>Built an AI quality gate:</b> deliverables are checked by two independent AI reviewers before they go to a client.</li>
           <li><span class="new">New</span><b>Automated monitoring:</b> daily priority-task sweeps, weekly site checks (phone links, forms, GA4, Search Console, schema), content decay checks and security scans.</li>
           <li><span class="new">New</span><b>Send screenshot-backed fix requests</b> to an outside development team, and review redesigns before they go to clients.</li>
-          <li><span class="new">New</span><b>Write compliance-aware copy</b> for regulated industries, including dental specialty advertising and contractor licensing rules.</li>
+          <li><span class="new">New</span><b>Write compliance-aware copy</b> for regulated industries, including dental specialty advertising and Louisiana contractor advertising rules.</li>
           <li>Senior SEO lead: keyword strategy, technical audits, link development and CRO testing.</li>
           <li>Pioneered the agency's AI workflow integration, cutting content production time by roughly 40 percent without losing quality.</li>
         </ul>
@@ -458,7 +460,7 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px}
       </article>
       <article class="case reveal">
         <figure><img src="img/portfolio-img-4-490x290.jpg" alt="House painting company homepage with service cards and review badges"></figure>
-        <div class="body"><span class="kind">Painting · Redesign</span><h3>Painting Company Website</h3><p>Handled design and CRO to brand standards, and migrated every URL from the old site to the new design without losing pages.</p></div>
+        <div class="body"><span class="kind">Painting · Redesign</span><h3>Painting Company Website</h3><p>Handled design and CRO to brand standards, and made sure every URL from the old site was migrated to the new design.</p></div>
       </article>
       <article class="case reveal">
         <figure><img src="img/portfolio-img-1-490x290.jpg" alt="Medical marijuana card website hero with state selector and approval buttons"></figure>
@@ -592,7 +594,11 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px}
   document.getElementById('leadForm').addEventListener('submit', function(e){
     e.preventDefault();
     var n = document.getElementById('formNote'), f = e.target;
-    if (!f.name.value.trim() || !/\S+@\S+\.\S+/.test(f.email.value)) { n.textContent = 'Add your name and a valid email so I can reply.'; return; }
+    var fn=document.getElementById('f-name'), fe=document.getElementById('f-email');
+    fn.removeAttribute('aria-invalid'); fe.removeAttribute('aria-invalid');
+    var badN=!fn.value.trim(), badE=!/\S+@\S+\.\S+/.test(fe.value);
+    if (badN) fn.setAttribute('aria-invalid','true'); if (badE) fe.setAttribute('aria-invalid','true');
+    if (badN || badE) { n.textContent = 'Add your name and a valid email so I can reply.'; (badN?fn:fe).focus(); return; }
     n.textContent = 'Mockup only: on the live site this sends your request to Maribeth.';
   });
 })();
