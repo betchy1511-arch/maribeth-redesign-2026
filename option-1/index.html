@@ -112,6 +112,7 @@ body.menu-open .nav{backdrop-filter:none;-webkit-backdrop-filter:none;transform:
 .who{display:flex;align-items:center;gap:16px}
 .avatar{flex:none;width:72px;height:72px;border-radius:50%;overflow:hidden;box-shadow:0 0 0 2px rgba(217,148,109,.7),0 0 0 8px rgba(217,148,109,.1),0 18px 40px rgba(0,0,0,.6);background:var(--ink-3)}
 .avatar img{width:100%;height:100%;object-fit:cover;object-position:50% 18%}
+.avatar.mark{display:grid;place-items:center;font-family:var(--head);font-weight:700;font-size:24px;letter-spacing:-.02em;color:var(--copper);background:radial-gradient(circle at 35% 30%,#1c2233,#0a0e18)}
 .avail{display:inline-flex;align-items:center;gap:10px;font-family:var(--mono);font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--mute);line-height:1.5}
 .avail b{flex:none;width:8px;height:8px;border-radius:50%;background:var(--sage);box-shadow:0 0 0 0 rgba(159,179,147,.6);animation:ping 2s infinite}
 @keyframes ping{70%{box-shadow:0 0 0 10px rgba(159,179,147,0)}100%{box-shadow:0 0 0 0 rgba(159,179,147,0)}}
@@ -330,7 +331,7 @@ footer{border-top:1px solid var(--line);padding-block:40px 32px;overflow:hidden}
   <div class="wrap hero-inner">
     <div class="hero-copy" id="heroCopy">
       <div class="who" data-hfade>
-        <span class="avatar"><img src="../img/banner-img-558x662.png" alt="Maribeth Laureen Binuya" width="558" height="662"></span>
+        <span class="avatar mark" aria-hidden="true">ML</span>
         <span class="avail"><b></b>Maribeth Laureen Binuya, SEO and GEO specialist</span>
       </div>
       <h1 id="heroH1">Get Cited by ChatGPT, Ranked by Google and <em>Recommended by Perplexity</em></h1>
