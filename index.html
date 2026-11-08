@@ -69,7 +69,7 @@ p{margin:0}
 .links{display:flex;align-items:center;gap:30px;list-style:none;margin:0;padding:0}
 .links a{text-decoration:none;font-size:15px;font-weight:600;color:var(--mute);transition:color .2s}
 .links a:hover{color:var(--cream)}
-.links a.btn{color:var(--on-copper);min-height:44px;padding:10px 20px}
+.links a.btn{color:var(--on-copper);font-weight:700;min-height:44px;padding:10px 20px}
 .menu-btn{display:none;width:46px;height:46px;border-radius:50%;border:1px solid var(--line);background:var(--ink-2);color:var(--cream);cursor:pointer;place-items:center}
 @media (max-width:1040px){
   .menu-btn{display:inline-grid}
@@ -82,8 +82,8 @@ p{margin:0}
 /* hero */
 .hero{position:relative;min-height:min(100svh,980px);display:flex;align-items:center;padding:120px 0 64px;overflow:hidden}
 .hero .wrap{position:relative;z-index:2;display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,1fr);gap:40px;align-items:center;width:100%}
-.hero-copy{display:grid;gap:26px}
-.hero h1{font-family:var(--serif);font-weight:700;font-size:clamp(44px,6.4vw,96px);line-height:1.02;letter-spacing:-.025em}
+.hero-copy{display:grid;gap:22px}
+.hero h1{font-family:var(--serif);font-weight:700;font-size:clamp(42px,5.2vw,78px);line-height:1.03;letter-spacing:-.025em}
 .hero h1 em{font-style:italic;font-weight:500;color:var(--copper)}
 .w{display:inline-block;overflow:hidden;vertical-align:top;padding-bottom:.08em;margin-bottom:-.08em}
 .w>span{display:inline-block}
@@ -98,7 +98,7 @@ p{margin:0}
 .map canvas{position:absolute;inset:0;width:100%;height:100%}
 .me{position:absolute;left:50%;top:50%;width:38%;aspect-ratio:1;transform:translate(-50%,-50%);border-radius:50%;overflow:hidden;box-shadow:0 0 0 1px rgba(217,148,109,.5),0 0 0 10px rgba(217,148,109,.06),0 30px 80px rgba(0,0,0,.6)}
 .me img{width:100%;height:100%;object-fit:cover;object-position:50% 20%}
-.ring-text{position:absolute;left:50%;top:50%;width:52%;aspect-ratio:1;transform:translate(-50%,-50%);animation:spin 26s linear infinite;pointer-events:none}
+.ring-text{position:absolute;left:50%;top:50%;width:56%;aspect-ratio:1;transform:translate(-50%,-50%);animation:spin 26s linear infinite;pointer-events:none}
 .ring-text text{font-family:var(--mono);font-size:7.2px;letter-spacing:2.6px;fill:var(--copper);text-transform:uppercase}
 @keyframes spin{to{transform:translate(-50%,-50%) rotate(360deg)}}
 .node{position:absolute;left:0;top:0;display:inline-flex;align-items:center;gap:8px;padding:8px 13px;border-radius:999px;background:rgba(22,19,17,.86);border:1px solid var(--line);font-size:13px;font-weight:700;white-space:nowrap;will-change:transform;backdrop-filter:blur(6px)}
