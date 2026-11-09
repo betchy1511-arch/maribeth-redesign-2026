@@ -323,6 +323,17 @@ footer{border-top:1px solid var(--line);padding-block:40px 32px;overflow:hidden}
 }
 @media (max-width:900px){.hero canvas{opacity:.3}}
 .sec-cta{display:flex;justify-content:center;margin-top:clamp(40px,5vw,64px)}
+
+#globe,#labels,.planet{display:none!important}
+.hero-photo{position:absolute;z-index:1;right:max(24px,6vw);top:54%;transform:translateY(-50%);width:min(34vw,470px);aspect-ratio:558/662;margin:0}
+.hero-photo img{position:relative;z-index:1;width:100%;height:100%;object-fit:cover;object-position:50% 12%;border-radius:999px 999px 28px 28px;background:radial-gradient(circle at 50% 38%,#2A3B6B,#141E3A 70%);box-shadow:0 40px 90px -40px rgba(0,0,0,.7)}
+.hp-ring{position:absolute;inset:-14px;border-radius:999px 999px 38px 38px;border:1px solid rgba(217,148,109,.55);box-shadow:0 0 60px rgba(217,148,109,.25)}
+.hp-chip{position:absolute;z-index:2;display:inline-flex;align-items:center;gap:8px;padding:8px 14px;border-radius:999px;background:rgba(16,26,51,.88);border:1px solid var(--line);color:var(--cream);font-family:var(--head);font-weight:600;font-size:14px;animation:hpFloat 6s ease-in-out infinite}
+.hp-chip i{width:7px;height:7px;border-radius:50%;background:var(--copper)}
+.hp-chip.c1{left:-12%;top:18%}.hp-chip.c2{right:-10%;top:46%;animation-delay:-2s}.hp-chip.c3{left:-6%;bottom:14%;animation-delay:-4s}
+@keyframes hpFloat{0%,100%{transform:translateY(0)}50%{transform:translateY(-10px)}}
+@media (prefers-reduced-motion:reduce){.hp-chip{animation:none}}
+@media (max-width:900px){#home.hero{display:flex;flex-direction:column}#home .hero-inner{order:1;min-height:auto;padding-bottom:24px}#home .hero-photo{order:2}.hero-photo{position:relative;right:auto;top:auto;transform:none;width:min(78vw,340px);margin:8px auto 40px;order:2}.hero-photo .hp-chip{font-size:12px}}
 </style>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"Person","name":"Maribeth Laureen Binuya","jobTitle":"Senior Digital Marketing Manager","worksFor":{"@type":"Organization","name":"Infintech Designs","url":"https://www.infintechdesigns.com/"},"url":"https://www.maribethlaureen.info/","knowsAbout":["Search engine optimization","Generative engine optimization","Schema markup","Agentic AI workflows","Conversion rate optimization","Web design"]}</script>
 </head>
@@ -365,7 +376,8 @@ footer{border-top:1px solid var(--line);padding-block:40px 32px;overflow:hidden}
     <span class="anchor" aria-hidden="true"><i class="dot"></i><span class="pill"><i></i>Copilot</span></span>
     <span class="anchor" aria-hidden="true"><i class="dot"></i><span class="pill"><i></i>AI Overviews</span></span>
   </div>
-  <div class="wrap hero-inner">
+  <figure class="hero-photo"><span class="hp-ring" aria-hidden="true"></span><img src="../img/banner-img-558x662.png" alt="Maribeth Laureen Binuya" width="558" height="662" fetchpriority="high"><span class="hp-chip c1" aria-hidden="true"><i></i>ChatGPT</span><span class="hp-chip c2" aria-hidden="true"><i></i>Google</span><span class="hp-chip c3" aria-hidden="true"><i></i>Perplexity</span></figure>
+<div class="wrap hero-inner">
     <div class="hero-copy" id="heroCopy">
       <div class="who" data-hfade>
         <span class="avatar mark" aria-hidden="true">ML</span>

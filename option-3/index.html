@@ -429,7 +429,7 @@ footer{border-top:1px solid var(--line);padding-block:40px 32px;overflow:hidden}
         <p class="note" data-hfade>No obligation. A short, plain-English read on where you stand in Google and in AI answers.</p>
       </div>
       <div class="portrait" id="portrait">
-        <div class="frame"><div class="hub" aria-hidden="true"><span class="hub-ring r1"></span><span class="hub-ring r2"></span><span class="hub-ring r3"></span><span class="hub-core"><b>Your</b><b>Brand</b></span></div></div>
+        <div class="frame"><img src="../img/banner-img-558x662.png" alt="Maribeth Laureen Binuya" width="558" height="662"></div>
         <span class="ai" aria-hidden="true" style="left:0;top:14%"><i></i>ChatGPT</span>
         <span class="ai" aria-hidden="true" style="right:0;top:6%"><i></i>Perplexity</span>
         <span class="ai" aria-hidden="true" style="right:-2%;top:34%"><i></i>Google</span>
@@ -839,7 +839,7 @@ footer{border-top:1px solid var(--line);padding-block:40px 32px;overflow:hidden}
       .from('#portrait .frame',{y:60,scale:.94,opacity:0,duration:1.4,ease:'expo.out'},'-=1.2')
       .from('#portrait .ai, #portrait .badge',{scale:.6,opacity:0,duration:.8,stagger:.06,ease:'back.out(1.7)'},'-=.9')
       .from('.hs',{y:30,opacity:0,duration:.8,stagger:.08,clearProps:'transform,opacity'},'-=.8');
-    gsap.to('#portrait .hub-core',{yPercent:-10,ease:'none',scrollTrigger:{trigger:'#home',start:'top top',end:'bottom top',scrub:true}});
+    gsap.to('#portrait .frame img',{yPercent:6,ease:'none',scrollTrigger:{trigger:'#home',start:'top top',end:'bottom top',scrub:true}});
 
     /* headings and fades */
     $$('[data-split]').forEach(function(h){ var ws=splitWords(h); gsap.from(ws,{yPercent:110,duration:1,ease:'power4.out',stagger:.05,scrollTrigger:{trigger:h,start:'top 86%'}}); });
