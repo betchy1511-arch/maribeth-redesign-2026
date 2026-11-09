@@ -321,6 +321,7 @@ footer{border-top:1px solid var(--line);padding-block:40px 32px;overflow:hidden}
  .xp-rail a b{font-family:var(--head);font-weight:600;font-size:16px;line-height:1.25}
  .xp-rail a.on{border-color:var(--copper);color:var(--cream);background:rgba(217,148,109,.07)}
 }
+@media (max-width:900px){.hero canvas{opacity:.45}}
 </style>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"Person","name":"Maribeth Laureen Binuya","jobTitle":"Senior Digital Marketing Manager","worksFor":{"@type":"Organization","name":"Infintech Designs","url":"https://www.infintechdesigns.com/"},"url":"https://www.maribethlaureen.info/","knowsAbout":["Search engine optimization","Generative engine optimization","Schema markup","Agentic AI workflows","Conversion rate optimization","Web design"]}</script>
 </head>
@@ -887,6 +888,7 @@ function init(THREE){
           float lat = (vUv.y - 0.5) * 3.14159;
           f.x *= max(cos(lat), 0.25);
           float dotm = 1.0 - smoothstep(0.22, 0.32, length(f));
+          dotm *= 1.0 - smoothstep(1.05, 1.3, abs(lat));
           float face = max(dot(n, V), 0.0);
           float light = 0.55 + 0.45 * face;
           vec3 ocean = mix(vec3(0.075, 0.11, 0.21), vec3(0.13, 0.19, 0.33), face);
