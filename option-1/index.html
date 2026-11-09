@@ -872,8 +872,8 @@ function init(THREE){
           float diff = max(dot(N, uSun), 0.0);
           vec3 H = normalize(uSun + V);
           float sp = pow(max(dot(N, H), 0.0), 36.0) * texture2D(uSpec, vUv).r;
-          vec3 dayCol = day * (0.05 + 1.08 * diff) + vec3(1.0, 0.9, 0.78) * sp * 0.5;
-          vec3 nightCol = texture2D(uNight, vUv).rgb * vec3(1.0, 0.78, 0.52) * 1.55 + day * 0.012;
+          vec3 dayCol = day * (0.24 + 0.95 * diff) + vec3(1.0, 0.9, 0.78) * sp * 0.5;
+          vec3 nightCol = texture2D(uNight, vUv).rgb * vec3(1.0, 0.78, 0.52) * 1.55 + day * 0.2;
           vec3 col = mix(nightCol, dayCol, dayMix);
           float rim = pow(1.0 - max(dot(n, V), 0.0), 3.0);
           col += vec3(0.32, 0.55, 1.0) * rim * (0.2 + 0.65 * dayMix);
@@ -1029,6 +1029,7 @@ function init(THREE){
       });
       markers.forEach(m => { const s = (time * 0.6 + m.phase) % 1; m.ring.scale.setScalar(1 + s * 1.6); m.ring.material.opacity = reduce ? 0.7 : 1 - s; });
 
+      SUN.copy(camera.position).normalize().multiplyScalar(2.2).add(new THREE.Vector3(-0.9,0.7,0)).normalize();
       renderer.render(scene, camera);
 
       /* project globe points to the DOM labels */
