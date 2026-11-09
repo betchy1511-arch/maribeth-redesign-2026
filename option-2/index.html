@@ -350,6 +350,22 @@ footer{border-top:1.5px solid var(--ink);padding-block:48px 32px;overflow:hidden
 #leadForm{scroll-margin-top:100px}
 .svc-side{display:grid;gap:28px}
 .svc-top .sec-head{margin-bottom:0}
+.sec-head.cert-head{max-width:none}.cert-head h2{max-width:none}
+
+/* xp v2: numbered ledger */
+#xp.xp{padding-left:0;gap:0;counter-reset:job}
+#xp .xp-line{display:none}
+#xp .job{counter-increment:job;grid-template-columns:clamp(70px,11vw,170px) minmax(0,1fr);column-gap:clamp(20px,3vw,48px);row-gap:22px;padding:clamp(32px,4vw,56px) 0;border-top:3px solid var(--ink)}
+#xp .job:last-child{border-bottom:3px solid var(--ink)}
+#xp .job::before{content:counter(job,decimal-leading-zero);position:static;grid-column:1;grid-row:1/span 2;width:auto;height:auto;border:0;border-radius:0;background:none;box-shadow:none;transform:none;font-family:var(--heavy);font-size:clamp(56px,9vw,150px);line-height:.85;color:var(--ink);transition:color .45s}
+#xp .job.on::before{color:var(--accent)}
+#xp .job .job-head,#xp .job ul{grid-column:2}
+#xp .job .job-head{grid-template-columns:minmax(0,1fr) auto;column-gap:24px;align-items:end}
+#xp .job .job-head h3{grid-column:1;grid-row:1}
+#xp .job .job-head .when{grid-column:2;grid-row:1;justify-self:end;white-space:nowrap;padding:6px 12px;background:var(--ink);color:var(--paper,#F3EBDD);border-radius:4px}
+#xp .job .job-head .org{grid-column:1/-1;font-family:var(--mono);font-size:13px;letter-spacing:.06em;text-transform:uppercase}
+@media (min-width:900px){#xp .job ul{columns:2;column-gap:44px;display:block}#xp .job li{break-inside:avoid;margin-bottom:14px}}
+@media (max-width:640px){#xp .job{grid-template-columns:1fr}#xp .job::before{grid-row:auto}#xp .job .job-head,#xp .job ul{grid-column:1}#xp .job .job-head{grid-template-columns:1fr}#xp .job .job-head .when{grid-column:1;grid-row:auto;justify-self:start}}
 </style>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"Person","name":"Maribeth Laureen Binuya","jobTitle":"Senior Digital Marketing Manager","worksFor":{"@type":"Organization","name":"Infintech Designs","url":"https://www.infintechdesigns.com/"},"url":"https://www.maribethlaureen.info/","knowsAbout":["Search engine optimization","Generative engine optimization","Schema markup","Agentic AI workflows","Conversion rate optimization","Web design"]}</script>
 </head>
@@ -634,7 +650,7 @@ footer{border-top:1.5px solid var(--ink);padding-block:48px 32px;overflow:hidden
 
 <section class="sec" aria-labelledby="certH">
   <div class="wrap">
-    <div class="sec-head split" style="margin-bottom:56px"><span class="label"><b>05</b>Certifications</span><h2 class="h2" id="certH" data-split><span class="hv">Certified Across the</span> <span class="sv hl">Marketing Stack</span></h2><p data-fade>Six certifications: Customer Value Optimization, Analytics and Data, Customer Acquisition, Search Marketing, Optimization and Testing, and Semrush Academy.</p></div>
+    <div class="sec-head cert-head" style="margin-bottom:56px"><span class="label"><b>05</b>Certifications</span><h2 class="h2" id="certH" data-split><span class="hv">Certified Across the</span> <span class="sv hl">Marketing Stack</span></h2></div>
     <div class="certs">
       <div class="cert" data-fade><span class="seal"><img src="../img/customer-value-optimization.png" alt="" width="64" height="64"></span>Customer Value Optimization</div>
       <div class="cert" data-fade><span class="seal"><img src="../img/analytics-data-specialist.png" alt="" width="64" height="64"></span>Analytics and Data</div>
@@ -922,5 +938,6 @@ footer{border-top:1.5px solid var(--ink);padding-block:48px 32px;overflow:hidden
 })();
 </script>
 <script>document.addEventListener("click",function(e){var a=e.target.closest('a[href="#leadForm"]');if(!a)return;setTimeout(function(){var i=document.getElementById("f-name");if(i)i.focus({preventScroll:true});},1400);});</script>
+<script></script>
 </body>
 </html>

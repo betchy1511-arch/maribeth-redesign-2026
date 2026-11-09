@@ -298,6 +298,29 @@ footer{border-top:1px solid var(--line);padding-block:40px 32px;overflow:hidden}
 .sites>div.wide{grid-column:1/-1}
 @media (min-width:901px){.sites>div.wide ul{columns:3;column-gap:32px}.sites>div.wide li{break-inside:avoid}}
 #leadForm{scroll-margin-top:100px}
+.sec-head.cert-head{max-width:none}.cert-head h2{max-width:none}
+
+/* xp v2: sticky rail + glass cards */
+#xp.xp{padding-left:0;gap:28px}
+#xp .xp-line,#xp .job::before{display:none}
+#xp .job{grid-template-columns:1fr;gap:22px;padding:clamp(24px,3vw,40px);border:1px solid var(--line);border-radius:24px;background:linear-gradient(160deg,rgba(255,255,255,.05),rgba(255,255,255,.01));overflow:hidden;scroll-margin-top:110px}
+#xp .job .job-head{grid-template-columns:auto 1fr;column-gap:20px;align-items:center}
+#xp .job .job-head .when{grid-column:1/-1;justify-self:start;padding:5px 12px;border:1px solid var(--copper);border-radius:999px}
+#xp .job .job-head h3,#xp .job .job-head .org{grid-column:1/-1}
+#xp .job .idx{position:absolute;right:clamp(18px,3vw,36px);top:6px;font-family:var(--head);font-weight:800;font-size:clamp(70px,9vw,130px);line-height:1;color:transparent;-webkit-text-stroke:1px rgba(217,148,109,.35);pointer-events:none}
+#xp .job.on{border-color:rgba(217,148,109,.55);box-shadow:0 0 0 1px rgba(217,148,109,.15),0 30px 60px -30px rgba(0,0,0,.5)}
+.xp-rail{display:none}
+@media (min-width:1000px){
+ #xp.xp{grid-template-columns:240px minmax(0,1fr);column-gap:clamp(32px,4vw,64px)}
+ #xp .job{grid-column:2}
+ #xp .job ul{columns:2;column-gap:36px;display:block}
+ #xp .job li{break-inside:avoid;margin-bottom:14px}
+ .xp-rail{display:grid;gap:6px;grid-column:1;grid-row:1/span 4;align-self:start;position:sticky;top:120px}
+ .xp-rail a{display:grid;gap:3px;padding:14px 16px;border-left:2px solid var(--line);color:var(--mute);text-decoration:none;transition:border-color .3s,color .3s,background .3s}
+ .xp-rail a small{font-family:var(--mono);font-size:11px;letter-spacing:.08em;color:var(--copper)}
+ .xp-rail a b{font-family:var(--head);font-weight:600;font-size:16px;line-height:1.25}
+ .xp-rail a.on{border-color:var(--copper);color:var(--cream);background:rgba(217,148,109,.07)}
+}
 </style>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"Person","name":"Maribeth Laureen Binuya","jobTitle":"Senior Digital Marketing Manager","worksFor":{"@type":"Organization","name":"Infintech Designs","url":"https://www.infintechdesigns.com/"},"url":"https://www.maribethlaureen.info/","knowsAbout":["Search engine optimization","Generative engine optimization","Schema markup","Agentic AI workflows","Conversion rate optimization","Web design"]}</script>
 </head>
@@ -547,7 +570,7 @@ footer{border-top:1px solid var(--line);padding-block:40px 32px;overflow:hidden}
 
 <section class="sec" aria-labelledby="certH" style="padding-top:0">
   <div class="wrap">
-    <div class="sec-head split" style="margin-bottom:40px"><span class="mono">Certifications</span><h2 id="certH" data-split>Certified Across the <em>Marketing Stack</em></h2><p data-fade>Six certifications: Customer Value Optimization, Analytics and Data, Customer Acquisition, Search Marketing, Optimization and Testing, and Semrush Academy.</p></div>
+    <div class="sec-head cert-head" style="margin-bottom:40px"><span class="mono">Certifications</span><h2 id="certH" data-split>Certified Across the <em>Marketing Stack</em></h2></div>
     <div class="certs">
       <div class="cert" data-fade><img src="../img/customer-value-optimization.png" alt="" width="64" height="64">Customer Value Optimization</div>
       <div class="cert" data-fade><img src="../img/analytics-data-specialist.png" alt="" width="64" height="64">Analytics and Data</div>
@@ -1066,5 +1089,12 @@ function init(THREE){
 }
 </script>
 <script>document.addEventListener("click",function(e){var a=e.target.closest('a[href="#leadForm"]');if(!a)return;setTimeout(function(){var i=document.getElementById("f-name");if(i)i.focus({preventScroll:true});},1400);});</script>
+<script>(function(){var xp=document.getElementById('xp');if(!xp)return;var jobs=[].slice.call(xp.querySelectorAll('.job'));var rail=document.createElement('nav');rail.className='xp-rail';rail.setAttribute('aria-label','Roles');
+jobs.forEach(function(j,i){j.id='job-'+(i+1);var n=document.createElement('span');n.className='idx';n.setAttribute('aria-hidden','true');n.textContent=String(i+1).padStart(2,'0');j.appendChild(n);
+var a=document.createElement('a');a.href='#job-'+(i+1);a.innerHTML='<small></small><b></b>';a.querySelector('small').textContent=j.querySelector('.when').textContent;a.querySelector('b').textContent=j.querySelector('h3').textContent;
+a.addEventListener('click',function(e){e.preventDefault();if(window.lenis&&lenis.scrollTo){lenis.scrollTo(j,{offset:-110})}else{j.scrollIntoView({behavior:'smooth'})}});rail.appendChild(a);});
+xp.insertBefore(rail,xp.firstChild);var links=rail.querySelectorAll('a');
+function spy(){var y=innerHeight*.45,k=0;jobs.forEach(function(j,i){if(j.getBoundingClientRect().top<y)k=i});links.forEach(function(l,i){l.classList.toggle('on',i===k)})}
+addEventListener('scroll',spy,{passive:true});spy();})();</script>
 </body>
 </html>
