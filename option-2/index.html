@@ -111,7 +111,7 @@ p{margin:0}
 .hstat b{font-family:var(--heavy);font-weight:400;font-size:clamp(46px,5vw,76px);line-height:.9;font-variant-numeric:tabular-nums}
 .hstat b sup{font-family:var(--serif);font-style:italic;font-size:.6em;vertical-align:.6em;color:var(--accent)}
 .hstat > span{font-size:14px;line-height:1.4;color:var(--ink-soft)}
-.h1{position:relative;z-index:2;font-size:clamp(40px,7vw,112px);line-height:.94;letter-spacing:-.01em}
+.h1{position:relative;z-index:2;font-size:clamp(40px,8.6vw,160px);line-height:.94;letter-spacing:-.01em}
 .h1 .ln{display:block}
 .h1 .sv{font-size:1.08em;line-height:.9}
 .ln-2{padding-left:clamp(0px,6vw,110px)}
@@ -398,6 +398,7 @@ footer{border-top:1.5px solid var(--ink);padding-block:48px 32px;overflow:hidden
 .dz figcaption b{font-size:16px;line-height:1.3}
 .dz figcaption span{font-size:12px;letter-spacing:.08em;text-transform:uppercase;opacity:.7;white-space:nowrap}
 .dz-note{margin:18px 0 0;font-size:14px;opacity:.75}
+.cert-head .h2{font-size:clamp(42px,8.6vw,165px)}
 </style>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"Person","name":"Maribeth Laureen Binuya","jobTitle":"Senior Digital Marketing Manager","worksFor":{"@type":"Organization","name":"Infintech Designs","url":"https://www.infintechdesigns.com/"},"url":"https://www.maribethlaureen.info/","knowsAbout":["Search engine optimization","Generative engine optimization","Schema markup","Agentic AI workflows","Conversion rate optimization","Web design"]}</script>
 </head>
@@ -441,11 +442,11 @@ footer{border-top:1.5px solid var(--ink);padding-block:48px 32px;overflow:hidden
       </div>
       <h1 class="h1" id="heroH1">
         <span class="ln ln-1"><span class="hv">Get Cited</span> <span class="sv">by</span> <span class="sv hl">ChatGPT,</span></span>
-        <span class="ln ln-2"><span class="hv">Ranked by</span> <span class="ring-slot" id="ringSlot" aria-hidden="true"></span> <span class="hv hl">Google</span></span>
+        <span class="ln ln-2"><span class="hv">Ranked by</span> <span class="hv hl">Google</span></span>
         <span class="ln ln-3"><span class="sv">and</span> <span class="hv">Recommended</span></span>
         <span class="ln ln-4"><span class="sv">by</span> <span class="sv hl">Perplexity</span></span>
       </h1>
-      <div class="portrait" id="portrait"><div class="ph-in"><div class="disc"><img src="../img/banner-img-558x662.png" alt="Maribeth Laureen Binuya" width="558" height="662"></div></div></div>
+      
       <div class="hero-foot">
         <div>
           <p class="sub" data-in>12 years in SEO, now working across vacation rentals, healthcare, law, restaurants and home services. I run agentic AI workflows and Generative Engine Optimization so your brand shows up in AI answers, not buried on page two.</p>
@@ -800,7 +801,7 @@ footer{border-top:1.5px solid var(--ink);padding-block:48px 32px;overflow:hidden
 
   /* hero portrait sits in the ring slot between headline words */
   var slot=byId('ringSlot'), portrait=byId('portrait'), heroMain=byId('heroMain');
-  function placePortrait(){
+  function placePortrait(){ if(!slot||!portrait||!heroMain) return;
     var s=slot.getBoundingClientRect(), m=heroMain.getBoundingClientRect();
     if(!s.width) return;
     var d=s.width*1.02;
