@@ -1,0 +1,135 @@
+[
+ {
+  "slug": "chiropractic-homepage",
+  "file": "chiropractic-homepage.mp4",
+  "poster": "chiropractic-homepage.jpg",
+  "niche": "Chiropractic clinic homepage",
+  "kind": "homepage"
+ },
+ {
+  "slug": "dental-motion-homepage",
+  "file": "dental-motion-homepage.mp4",
+  "poster": "dental-motion-homepage.jpg",
+  "niche": "Dental clinic homepage",
+  "kind": "homepage"
+ },
+ {
+  "slug": "life-coach-homepage",
+  "file": "life-coach-homepage.mp4",
+  "poster": "life-coach-homepage.jpg",
+  "niche": "Life coach homepage",
+  "kind": "homepage"
+ },
+ {
+  "slug": "gutter-homepage",
+  "file": "gutter-homepage.mp4",
+  "poster": "gutter-homepage.jpg",
+  "niche": "Gutter company homepage",
+  "kind": "homepage"
+ },
+ {
+  "slug": "roofing-location-page",
+  "file": "roofing-location-page.mp4",
+  "poster": "roofing-location-page.jpg",
+  "niche": "Roofing contractor location page",
+  "kind": "landing page"
+ },
+ {
+  "slug": "hot-dog-restaurant-homepage",
+  "file": "hot-dog-restaurant-homepage.mp4",
+  "poster": "hot-dog-restaurant-homepage.jpg",
+  "niche": "Hot dog restaurant homepage",
+  "kind": "homepage"
+ },
+ {
+  "slug": "marketing-agency-homepage",
+  "file": "marketing-agency-homepage.mp4",
+  "poster": "marketing-agency-homepage.jpg",
+  "niche": "AI marketing agency homepage",
+  "kind": "homepage"
+ },
+ {
+  "slug": "pizza-restaurant-homepage",
+  "file": "pizza-restaurant-homepage.mp4",
+  "poster": "pizza-restaurant-homepage.jpg",
+  "niche": "Pizza restaurant homepage",
+  "kind": "homepage"
+ },
+ {
+  "slug": "renovation-contractor-site",
+  "file": "renovation-contractor-site.mp4",
+  "poster": "renovation-contractor-site.jpg",
+  "niche": "Renovation contractor site",
+  "kind": "full site"
+ },
+ {
+  "slug": "thai-restaurant-homepage",
+  "file": "thai-restaurant-homepage.mp4",
+  "poster": "thai-restaurant-homepage.jpg",
+  "niche": "Thai restaurant homepage",
+  "kind": "homepage"
+ },
+ {
+  "slug": "ai-automation-homepage",
+  "file": "ai-automation-homepage.mp4",
+  "poster": "ai-automation-homepage.jpg",
+  "niche": "AI automation agency homepage",
+  "kind": "homepage"
+ },
+ {
+  "slug": "roofing-contractor-site",
+  "file": "roofing-contractor-site.mp4",
+  "poster": "roofing-contractor-site.jpg",
+  "niche": "Roofing contractor site",
+  "kind": "full site"
+ },
+ {
+  "slug": "hvac-company-site",
+  "file": "hvac-company-site.mp4",
+  "poster": "hvac-company-site.jpg",
+  "niche": "HVAC company 50-page site",
+  "kind": "full site"
+ },
+ {
+  "slug": "dental-clinic-homepage",
+  "file": "dental-clinic-homepage.mp4",
+  "poster": "dental-clinic-homepage.jpg",
+  "niche": "Dental clinic homepage",
+  "kind": "homepage"
+ },
+ {
+  "slug": "electrician-homepage",
+  "file": "electrician-homepage.mp4",
+  "poster": "electrician-homepage.jpg",
+  "niche": "Electrician homepage",
+  "kind": "homepage"
+ },
+ {
+  "slug": "plumbing-services-section",
+  "file": "plumbing-services-section.mp4",
+  "poster": "plumbing-services-section.jpg",
+  "niche": "Plumbing services section",
+  "kind": "section"
+ },
+ {
+  "slug": "web-design-agency-homepage",
+  "file": "web-design-agency-homepage.mp4",
+  "poster": "web-design-agency-homepage.jpg",
+  "niche": "Web design agency homepage",
+  "kind": "homepage"
+ },
+ {
+  "slug": "winery-homepage",
+  "file": "winery-homepage.mp4",
+  "poster": "winery-homepage.jpg",
+  "niche": "Winery homepage",
+  "kind": "homepage"
+ },
+ {
+  "slug": "bathroom-remodel-landing-page",
+  "file": "bathroom-remodel-landing-page.mp4",
+  "poster": "bathroom-remodel-landing-page.jpg",
+  "niche": "Bathroom remodel landing page",
+  "kind": "landing page"
+ }
+]
