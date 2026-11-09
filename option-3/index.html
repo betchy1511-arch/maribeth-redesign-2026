@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <meta name="robots" content="noindex, nofollow">
 <title>Maribeth Laureen Redesign Option 3</title>
-<script>try{var t=localStorage.getItem('ml3-theme');if(t==='dark'||t==='light'){document.documentElement.setAttribute('data-theme',t)}}catch(e){}</script>
+<script>(function(){var t='light';try{var s=localStorage.getItem('ml3-theme-v2');if(s==='dark'||s==='light')t=s}catch(e){}document.documentElement.setAttribute('data-theme',t)})();</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap">
@@ -24,19 +24,19 @@
 }
 @media (prefers-color-scheme: dark){
   :root:not([data-theme="light"]){
-    --bg:#121010; --bg-2:#181513; --surface:#1E1A17; --ink:#F3EDE6; --mute:#B8ADA1; --dim:#A0958A; --line:#2F2925;
+    --bg:#27221F; --bg-2:#2F2925; --surface:#38312C; --ink:#F6F0E9; --mute:#C9BEB2; --dim:#B5AA9D; --line:#4D443D;
     --accent:#E39C73; --accent-hover:#EEB28F; --on-accent:#1A110C; --accent-soft:rgba(227,156,115,.14);
     --glow1:rgba(193,127,90,.34); --glow2:rgba(166,90,51,.36); --glow3:rgba(227,156,115,.2);
-    --nav-bg:rgba(18,16,16,.8); --tag-bg:#9FB393; --tag-ink:#141A10; --photo-bg:#2A221D;
+    --nav-bg:rgba(39,34,31,.84); --tag-bg:#9FB393; --tag-ink:#141A10; --photo-bg:#3A312B;
     --shadow:0 24px 60px rgba(0,0,0,.45);
     color-scheme:dark;
   }
 }
 :root[data-theme="dark"]{
-  --bg:#121010; --bg-2:#181513; --surface:#1E1A17; --ink:#F3EDE6; --mute:#B8ADA1; --dim:#A0958A; --line:#2F2925;
+  --bg:#27221F; --bg-2:#2F2925; --surface:#38312C; --ink:#F6F0E9; --mute:#C9BEB2; --dim:#B5AA9D; --line:#4D443D;
   --accent:#E39C73; --accent-hover:#EEB28F; --on-accent:#1A110C; --accent-soft:rgba(227,156,115,.14);
   --glow1:rgba(193,127,90,.34); --glow2:rgba(166,90,51,.36); --glow3:rgba(227,156,115,.2);
-  --nav-bg:rgba(18,16,16,.8); --tag-bg:#9FB393; --tag-ink:#141A10; --photo-bg:#2A221D;
+  --nav-bg:rgba(39,34,31,.84); --tag-bg:#9FB393; --tag-ink:#141A10; --photo-bg:#3A312B;
   --shadow:0 24px 60px rgba(0,0,0,.45);
   color-scheme:dark;
 }
@@ -235,9 +235,9 @@ section[id]{scroll-margin-top:84px}
 @media (max-width:900px){.how{grid-template-columns:1fr}.how-left{position:static}.gsap-on .step{opacity:1}.gsap-on .step.on{transform:none}}
 
 /* before / after band (always dark) */
-.ba{position:relative;background:#15110F;color:#F3EDE6;overflow:hidden}
-:root[data-theme="dark"] .ba{background:#1F1A17}
-@media (prefers-color-scheme: dark){ :root:not([data-theme="light"]) .ba{background:#1F1A17} }
+.ba{position:relative;background:#2B2522;color:#F3EDE6;overflow:hidden}
+:root[data-theme="dark"] .ba{background:#342D29}
+@media (prefers-color-scheme: dark){ :root:not([data-theme="light"]) .ba{background:#342D29} }
 .ba-stage{min-height:100svh;display:grid;align-content:center;justify-items:center;gap:clamp(28px,4vw,48px);padding:96px var(--gutr) 72px var(--gut);text-align:center;position:relative}
 .ba-glow{position:absolute;width:640px;height:640px;left:50%;top:50%;margin:-320px 0 0 -320px;border-radius:50%;background:radial-gradient(circle,rgba(227,156,115,.22),transparent 65%);pointer-events:none}
 .ba-switch{display:inline-flex;gap:4px;padding:4px;border-radius:999px;border:1px solid #3A322C;font-family:var(--mono);font-size:12px;letter-spacing:.14em;text-transform:uppercase;position:relative}
@@ -710,7 +710,7 @@ footer{border-top:1px solid var(--line);padding-block:40px 32px;overflow:hidden}
   var tbtn=document.getElementById('themeBtn');
   function effective(){ var a=root.getAttribute('data-theme'); if(a==='dark'||a==='light') return a; return matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light'; }
   function syncTheme(){ if(!tbtn) return; tbtn.setAttribute('aria-label', effective()==='dark'?'Switch to light theme':'Switch to dark theme'); }
-  if(tbtn) tbtn.addEventListener('click',function(){ var next=effective()==='dark'?'light':'dark'; root.setAttribute('data-theme',next); try{localStorage.setItem('ml3-theme',next)}catch(e){} syncTheme(); });
+  if(tbtn) tbtn.addEventListener('click',function(){ var next=effective()==='dark'?'light':'dark'; root.setAttribute('data-theme',next); try{localStorage.setItem('ml3-theme-v2',next)}catch(e){} syncTheme(); });
   syncTheme();
 
   /* mobile menu */
