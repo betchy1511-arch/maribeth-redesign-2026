@@ -138,7 +138,7 @@ p{margin:0}
 .hero .sub{font-size:clamp(17px,1.4vw,19px);color:var(--mute);max-width:56ch}
 .ctas{display:flex;flex-wrap:wrap;gap:12px}
 .hero .note{font-size:14px;color:var(--mute)}
-.portrait{position:relative;justify-self:center;width:100%;max-width:440px;padding:28px 0 40px}
+.portrait{position:relative;justify-self:center;width:100%;max-width:440px;padding:28px 0 56px}
 .portrait .frame{position:relative;aspect-ratio:558/662;border-radius:999px 999px 36px 36px;overflow:hidden;background:var(--photo-bg);box-shadow:var(--shadow)}
 .portrait .frame img{width:100%;height:100%;object-fit:cover;object-position:50% 15%}
 .hub{position:absolute;inset:0;display:grid;place-items:center;background:radial-gradient(circle at 50% 45%,var(--accent-soft) 0%,transparent 62%)}
@@ -149,7 +149,7 @@ p{margin:0}
 @keyframes hubPulse{0%{transform:translate(-50%,-50%) scale(.92);opacity:.6}70%{opacity:.15}100%{transform:translate(-50%,-50%) scale(1.08);opacity:0}}
 .hub-core{position:relative;width:30%;aspect-ratio:1;border-radius:50%;background:var(--accent);color:var(--on-accent);display:grid;place-content:center;text-align:center;font-weight:800;font-size:clamp(15px,1.6vw,20px);line-height:1.1;box-shadow:0 0 0 10px var(--accent-soft),0 20px 50px rgba(0,0,0,.25)}
 .hub-core b{display:block}
-.badge{position:absolute;left:-6px;bottom:30px;width:112px;height:112px;border-radius:50%;background:var(--surface);box-shadow:var(--shadow);display:grid;place-items:center}
+.badge{position:absolute;left:-6px;bottom:78px;width:112px;height:112px;border-radius:50%;background:var(--surface);box-shadow:var(--shadow);display:grid;place-items:center}
 .badge svg{width:100%;height:100%;animation:spin 22s linear infinite}
 .badge text{font-family:var(--mono);font-size:8.6px;letter-spacing:2.2px;fill:var(--ink)}
 .badge i{position:absolute;width:12px;height:12px;border-radius:50%;background:var(--accent)}
@@ -349,6 +349,11 @@ footer{border-top:1px solid var(--line);padding-block:40px 32px;overflow:hidden}
 .me-card b{font-size:17px}
 .me-card span{font-size:14px;opacity:.78}
 @media (max-width:420px){.me-card img{width:72px;height:72px}}
+
+@media (min-width:901px){.sec-head.split{max-width:none;grid-template-columns:minmax(0,1.25fr) minmax(0,1fr);column-gap:clamp(32px,5vw,88px);align-items:end}.sec-head.split>:first-child{grid-column:1/-1}.sec-head.split>h2{grid-column:1}.sec-head.split>p{grid-column:2;align-self:end;margin:0 0 .5em}}
+.sites>div.wide{grid-column:1/-1}
+@media (min-width:901px){.sites>div.wide ul{columns:3;column-gap:32px}.sites>div.wide li{break-inside:avoid}}
+#leadForm{scroll-margin-top:100px}
 </style>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"Person","name":"Maribeth Laureen Binuya","jobTitle":"Senior Digital Marketing Manager","worksFor":{"@type":"Organization","name":"Infintech Designs","url":"https://www.infintechdesigns.com/"},"url":"https://www.maribethlaureen.info/","knowsAbout":["Search engine optimization","Generative engine optimization","Schema markup","Agentic AI workflows","Conversion rate optimization","Web design"]}</script>
 </head>
@@ -367,7 +372,7 @@ footer{border-top:1px solid var(--line);padding-block:40px 32px;overflow:hidden}
       <li><a href="#experience">Experience</a></li>
       <li><a href="#work">Work</a></li>
       <li><a href="#contact">Contact</a></li>
-      <li><a class="btn btn-primary" href="#contact">Get My Free AI Visibility Read<span class="arr" aria-hidden="true"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 8h10M9 4l4 4-4 4"/></svg></span></a></li>
+      <li><a class="btn btn-primary" href="#leadForm">Get My Free AI Visibility Read<span class="arr" aria-hidden="true"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 8h10M9 4l4 4-4 4"/></svg></span></a></li>
     </ul></nav>
     <div class="nav-r">
       <button class="icon-btn theme-btn" id="themeBtn" type="button" aria-label="Switch to dark theme">
@@ -394,7 +399,7 @@ footer{border-top:1px solid var(--line);padding-block:40px 32px;overflow:hidden}
         <h1 id="heroH1">Get Cited by <em>ChatGPT,</em> Ranked by <em>Google</em> and Recommended by <em>Perplexity</em></h1>
         <p class="sub" data-hfade>12 years in SEO, now working across vacation rentals, healthcare, law, restaurants and home services. I run agentic AI workflows and Generative Engine Optimization so your brand shows up in AI answers, not buried on page two.</p>
         <div class="ctas" data-hfade>
-          <a class="btn btn-primary" href="#contact">Get My Free AI Visibility Read<span class="arr" aria-hidden="true"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 8h10M9 4l4 4-4 4"/></svg></span></a>
+          <a class="btn btn-primary" href="#leadForm">Get My Free AI Visibility Read<span class="arr" aria-hidden="true"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 8h10M9 4l4 4-4 4"/></svg></span></a>
           <a class="btn btn-ghost" href="#work">See My Work</a>
         </div>
         <p class="note" data-hfade>No obligation. A short, plain-English read on where you stand in Google and in AI answers.</p>
@@ -441,7 +446,7 @@ footer{border-top:1px solid var(--line);padding-block:40px 32px;overflow:hidden}
 
 <section class="sec" id="services">
   <div class="wrap">
-    <div class="sec-head">
+    <div class="sec-head split">
       <span class="eyebrow">What I do</span>
       <h2 data-split>Search Work for the Way <em>Buyers Look Now</em></h2>
       <p data-fade>People still search Google, and more of them now ask ChatGPT, Perplexity and Google's AI Overviews. I build for both.</p>
@@ -539,7 +544,7 @@ footer{border-top:1px solid var(--line);padding-block:40px 32px;overflow:hidden}
       <div class="xp-line" aria-hidden="true"><i id="xpFill"></i></div>
 
       <article class="job">
-        <div class="job-head"><span class="when">Aug 2024 to Present</span><h3>Marketing Specialist</h3><p class="org">Danner Enterprises, Vacation Rental Marketing</p></div>
+        <div class="job-head"><span class="when">Aug 2024 to Present</span><h3>Marketing Specialist</h3><p class="org">Vacation Rental Marketing</p></div>
         <ul>
           <li>Run end-to-end SEO and GEO for a multi-property vacation rental portfolio: content strategy, on-page work and Core Web Vitals.</li>
           <li>Manage Google Business Profiles across the property roster with NAP consistency and citation cleanup.</li>
@@ -559,7 +564,6 @@ footer{border-top:1px solid var(--line);padding-block:40px 32px;overflow:hidden}
           <li><span class="new">New</span><b>Wrote the team's six standard procedures</b> (blog creation, topic clusters, metas and H1s, website audits, schema, client onboarding) and turned each into an AI skill the team runs.</li>
           <li><span class="new">New</span><b>Built an AI quality gate:</b> deliverables are checked by two independent AI reviewers before they go to a client.</li>
           <li><span class="new">New</span><b>Automated monitoring:</b> daily priority-task sweeps, weekly site checks (phone links, forms, GA4, Search Console, schema), content decay checks and security scans.</li>
-          <li><span class="new">New</span><b>Send screenshot-backed fix requests</b> to an outside development team, and review redesigns before they go to clients.</li>
           <li><span class="new">New</span><b>Design and build animated websites:</b> redesign mockups and prototypes with scroll-driven motion, interactive 3D globes, animated illustrations and smooth scrolling.</li>
           <li>Senior SEO lead: keyword strategy, technical audits, link development and CRO testing.</li>
           <li>Pioneered the agency's AI workflow integration, cutting content production time by roughly 40 percent without losing quality.</li>
@@ -587,7 +591,7 @@ footer{border-top:1px solid var(--line);padding-block:40px 32px;overflow:hidden}
 
 <section class="sec" id="work">
   <div class="wrap">
-    <div class="sec-head">
+    <div class="sec-head split">
       <span class="eyebrow">Selected work</span>
       <h2 data-split>Sites I Designed <em>and Fixed</em></h2>
       <p data-fade>Project examples from my agency work.</p>
@@ -630,20 +634,20 @@ footer{border-top:1px solid var(--line);padding-block:40px 32px;overflow:hidden}
         <li><a class="btn-sm" href="https://www.kindhomesolutions.co/" target="_blank" rel="noopener">kindhomesolutions.co<svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M4 10l6-6M5 4h5v5"/></svg></a></li>
         <li><a class="btn-sm" href="https://www.infintechdesigns.com/web-design-seo/" target="_blank" rel="noopener">infintechdesigns.com/web-design-seo<svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M4 10l6-6M5 4h5v5"/></svg></a></li>
       </ul></div>
-      <div data-fade><h3>Other Sites I Have Worked On</h3><ul>
+      <div data-fade><h3>Vacation Rental and Hospitality Sites</h3><ul><li><a class="btn-sm" href="https://thousandhillsvacations.com/" target="_blank" rel="noopener">thousandhillsvacations.com<svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M4 10l6-6M5 4h5v5"/></svg></a></li><li><a class="btn-sm" href="https://www.thousandhillsresorthotel.com/" target="_blank" rel="noopener">thousandhillsresorthotel.com<svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M4 10l6-6M5 4h5v5"/></svg></a></li><li><a class="btn-sm" href="https://talltimbersvacations.com/" target="_blank" rel="noopener">talltimbersvacations.com<svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M4 10l6-6M5 4h5v5"/></svg></a></li><li><a class="btn-sm" href="https://www.vacationstar.com/" target="_blank" rel="noopener">vacationstar.com<svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M4 10l6-6M5 4h5v5"/></svg></a></li><li><a class="btn-sm" href="https://rocklane.com/" target="_blank" rel="noopener">rocklane.com<svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M4 10l6-6M5 4h5v5"/></svg></a></li><li><a class="btn-sm" href="https://www.vacationbranson.com/" target="_blank" rel="noopener">vacationbranson.com<svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M4 10l6-6M5 4h5v5"/></svg></a></li><li><a class="btn-sm" href="https://bransonshowtickets.com/" target="_blank" rel="noopener">bransonshowtickets.com<svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M4 10l6-6M5 4h5v5"/></svg></a></li></ul></div><div class="wide" data-fade><h3>Home Service and Local Business Sites</h3><ul>
         <li><a class="btn-sm" href="https://www.bigeasyroofing.com/" target="_blank" rel="noopener">bigeasyroofing.com<svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M4 10l6-6M5 4h5v5"/></svg></a></li>
         <li><a class="btn-sm" href="https://www.turnkeyroofers.com/" target="_blank" rel="noopener">turnkeyroofers.com<svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M4 10l6-6M5 4h5v5"/></svg></a></li>
         <li><a class="btn-sm" href="https://www.bigeasyroofteam.com/" target="_blank" rel="noopener">bigeasyroofteam.com<svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M4 10l6-6M5 4h5v5"/></svg></a></li>
         <li><a class="btn-sm" href="https://cali.solar/" target="_blank" rel="noopener">cali.solar<svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M4 10l6-6M5 4h5v5"/></svg></a></li>
-        <li><a class="btn-sm" href="https://www.harmoniahealthsolutions.com/" target="_blank" rel="noopener">harmoniahealthsolutions.com<svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M4 10l6-6M5 4h5v5"/></svg></a></li>
-      </ul></div>
+        <li><a class="btn-sm" href="http://harmoniahealthsolutions.com/" target="_blank" rel="noopener">harmoniahealthsolutions.com<svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M4 10l6-6M5 4h5v5"/></svg></a></li>
+      <li><a class="btn-sm" href="https://www.bigeasyroofers.com/" target="_blank" rel="noopener">bigeasyroofers.com<svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M4 10l6-6M5 4h5v5"/></svg></a></li><li><a class="btn-sm" href="https://www.bigeasydemolition.com/" target="_blank" rel="noopener">bigeasydemolition.com<svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M4 10l6-6M5 4h5v5"/></svg></a></li><li><a class="btn-sm" href="https://www.bigeasyelectricians.com/" target="_blank" rel="noopener">bigeasyelectricians.com<svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M4 10l6-6M5 4h5v5"/></svg></a></li><li><a class="btn-sm" href="https://www.bigeasyairconditioning.com/" target="_blank" rel="noopener">bigeasyairconditioning.com<svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M4 10l6-6M5 4h5v5"/></svg></a></li><li><a class="btn-sm" href="https://www.bigeasyironworks.com/" target="_blank" rel="noopener">bigeasyironworks.com<svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M4 10l6-6M5 4h5v5"/></svg></a></li><li><a class="btn-sm" href="https://www.bigeasyasphalt.com/" target="_blank" rel="noopener">bigeasyasphalt.com<svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M4 10l6-6M5 4h5v5"/></svg></a></li><li><a class="btn-sm" href="https://www.bigeasysod.com/" target="_blank" rel="noopener">bigeasysod.com<svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M4 10l6-6M5 4h5v5"/></svg></a></li><li><a class="btn-sm" href="https://www.selectgaragedoorservice.com/" target="_blank" rel="noopener">selectgaragedoorservice.com<svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M4 10l6-6M5 4h5v5"/></svg></a></li><li><a class="btn-sm" href="https://www.tnstandard.com/" target="_blank" rel="noopener">tnstandard.com<svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M4 10l6-6M5 4h5v5"/></svg></a></li><li><a class="btn-sm" href="https://www.turnkeyroofingteam.com/" target="_blank" rel="noopener">turnkeyroofingteam.com<svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M4 10l6-6M5 4h5v5"/></svg></a></li><li><a class="btn-sm" href="https://www.istc.net/" target="_blank" rel="noopener">istc.net<svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M4 10l6-6M5 4h5v5"/></svg></a></li><li><a class="btn-sm" href="https://www.ikerdlaw.com/" target="_blank" rel="noopener">ikerdlaw.com<svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M4 10l6-6M5 4h5v5"/></svg></a></li><li><a class="btn-sm" href="https://smilebliss.com/" target="_blank" rel="noopener">smilebliss.com<svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M4 10l6-6M5 4h5v5"/></svg></a></li><li><a class="btn-sm" href="https://texaswebdesign.com/" target="_blank" rel="noopener">texaswebdesign.com<svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M4 10l6-6M5 4h5v5"/></svg></a></li></ul></div>
     </div>
   </div>
 </section>
 
 <section class="sec" id="certs" aria-labelledby="certH" style="padding-top:0">
   <div class="wrap">
-    <div class="sec-head" style="margin-bottom:40px"><span class="eyebrow">Certifications</span><h2 id="certH" data-split>Certified Across the <em>Marketing Stack</em></h2></div>
+    <div class="sec-head split" style="margin-bottom:40px"><span class="eyebrow">Certifications</span><h2 id="certH" data-split>Certified Across the <em>Marketing Stack</em></h2><p data-fade>Six certifications covering customer value, analytics, customer acquisition, search marketing, testing and Semrush.</p></div>
     <div class="certs">
       <div class="cert" data-fade><img src="../img/customer-value-optimization.png" alt="" width="64" height="64">Customer Value Optimization</div>
       <div class="cert" data-fade><img src="../img/analytics-data-specialist.png" alt="" width="64" height="64">Analytics and Data</div>
@@ -691,7 +695,7 @@ footer{border-top:1px solid var(--line);padding-block:40px 32px;overflow:hidden}
   </div>
 </footer>
 
-<div class="mcta" id="mcta"><a class="btn btn-primary" href="#contact">Get My Free AI Visibility Read<span class="arr" aria-hidden="true"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 8h10M9 4l4 4-4 4"/></svg></span></a></div>
+<div class="mcta" id="mcta"><a class="btn btn-primary" href="#leadForm">Get My Free AI Visibility Read<span class="arr" aria-hidden="true"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 8h10M9 4l4 4-4 4"/></svg></span></a></div>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
@@ -880,5 +884,6 @@ footer{border-top:1px solid var(--line);padding-block:40px 32px;overflow:hidden}
   });
 })();
 </script>
+<script>document.addEventListener("click",function(e){var a=e.target.closest('a[href="#leadForm"]');if(!a)return;setTimeout(function(){var i=document.getElementById("f-name");if(i)i.focus({preventScroll:true});},1400);});</script>
 </body>
 </html>

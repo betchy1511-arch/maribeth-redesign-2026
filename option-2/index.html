@@ -111,7 +111,7 @@ p{margin:0}
 .hstat b{font-family:var(--heavy);font-weight:400;font-size:clamp(46px,5vw,76px);line-height:.9;font-variant-numeric:tabular-nums}
 .hstat b sup{font-family:var(--serif);font-style:italic;font-size:.6em;vertical-align:.6em;color:var(--accent)}
 .hstat > span{font-size:14px;line-height:1.4;color:var(--ink-soft)}
-.h1{position:relative;z-index:2;font-size:clamp(40px,9vw,140px);line-height:.94;letter-spacing:-.01em}
+.h1{position:relative;z-index:2;font-size:clamp(40px,7vw,112px);line-height:.94;letter-spacing:-.01em}
 .h1 .ln{display:block}
 .h1 .sv{font-size:1.08em;line-height:.9}
 .ln-2{padding-left:clamp(0px,6vw,110px)}
@@ -179,7 +179,7 @@ section[id]{scroll-margin-top:86px}
 .mini-stats div+div{padding-left:18px;border-left:1px solid var(--rule)}
 .mini-stats b{font-family:var(--heavy);font-weight:400;font-size:clamp(44px,4.6vw,68px);line-height:.9}
 .mini-stats b sup{font-family:var(--serif);font-style:italic;font-size:.55em;vertical-align:.65em;color:var(--accent)}
-.mini-stats span{font-size:14px;color:var(--ink-soft);line-height:1.45}
+.mini-stats div>span{font-size:14px;color:var(--ink-soft);line-height:1.45}
 .svc-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:24px}
 .svc{position:relative;background:var(--card);border:1.5px solid var(--ink);border-radius:28px;padding:clamp(26px,3vw,40px);display:grid;gap:16px;box-shadow:6px 6px 0 var(--ink);transition:transform .35s cubic-bezier(.2,.7,.2,1),box-shadow .35s cubic-bezier(.2,.7,.2,1)}
 .svc:hover{transform:translate(-3px,-3px);box-shadow:10px 10px 0 var(--accent)}
@@ -343,6 +343,13 @@ footer{border-top:1.5px solid var(--ink);padding-block:48px 32px;overflow:hidden
 .me-card b{font-size:17px}
 .me-card span{font-size:14px;opacity:.78}
 @media (max-width:420px){.me-card img{width:72px;height:72px}}
+
+@media (min-width:901px){.sec-head.split{max-width:none;grid-template-columns:minmax(0,1.25fr) minmax(0,1fr);column-gap:clamp(32px,5vw,88px);align-items:end}.sec-head.split>:first-child{grid-column:1/-1}.sec-head.split>h2{grid-column:1}.sec-head.split>p{grid-column:2;align-self:end;margin:0 0 .5em}}
+.sites>div.wide{grid-column:1/-1}
+@media (min-width:901px){.sites>div.wide ul{columns:3;column-gap:32px}.sites>div.wide li{break-inside:avoid}}
+#leadForm{scroll-margin-top:100px}
+.svc-side{display:grid;gap:28px}
+.svc-top .sec-head{margin-bottom:0}
 </style>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"Person","name":"Maribeth Laureen Binuya","jobTitle":"Senior Digital Marketing Manager","worksFor":{"@type":"Organization","name":"Infintech Designs","url":"https://www.infintechdesigns.com/"},"url":"https://www.maribethlaureen.info/","knowsAbout":["Search engine optimization","Generative engine optimization","Schema markup","Agentic AI workflows","Conversion rate optimization","Web design"]}</script>
 </head>
@@ -366,7 +373,7 @@ footer{border-top:1.5px solid var(--ink);padding-block:48px 32px;overflow:hidden
       <li><a href="#experience">Experience</a></li>
       <li><a href="#work">Work</a></li>
       <li><a href="#contact">Contact</a></li>
-      <li><a class="btn btn-primary" href="#contact">Get My Free AI Visibility Read</a></li>
+      <li><a class="btn btn-primary" href="#leadForm">Get My Free AI Visibility Read</a></li>
     </ul></nav>
   </div>
 </header>
@@ -385,17 +392,17 @@ footer{border-top:1.5px solid var(--ink);padding-block:48px 32px;overflow:hidden
         </div>
       </div>
       <h1 class="h1" id="heroH1">
-        <span class="ln ln-1"><span class="hv">Get Cited</span> <span class="sv hl">by ChatGPT,</span></span>
-        <span class="ln ln-2"><span class="hv">Ranked by</span> <span class="ring-slot" id="ringSlot" aria-hidden="true"></span> <span class="hv">Google</span></span>
+        <span class="ln ln-1"><span class="hv">Get Cited</span> <span class="sv">by</span> <span class="sv hl">ChatGPT,</span></span>
+        <span class="ln ln-2"><span class="hv">Ranked by</span> <span class="ring-slot" id="ringSlot" aria-hidden="true"></span> <span class="hv hl">Google</span></span>
         <span class="ln ln-3"><span class="sv">and</span> <span class="hv">Recommended</span></span>
-        <span class="ln ln-4"><span class="sv hl">by Perplexity</span></span>
+        <span class="ln ln-4"><span class="sv">by</span> <span class="sv hl">Perplexity</span></span>
       </h1>
       <div class="portrait" id="portrait"><div class="ph-in"><div class="disc" aria-hidden="true"><span class="yb"><b>Your</b><b>Brand</b></span></div></div></div>
       <div class="hero-foot">
         <div>
           <p class="sub" data-in>12 years in SEO, now working across vacation rentals, healthcare, law, restaurants and home services. I run agentic AI workflows and Generative Engine Optimization so your brand shows up in AI answers, not buried on page two.</p>
           <div class="ctas" data-in>
-            <a class="btn btn-primary" href="#contact">Get My Free AI Visibility Read<span class="arr" aria-hidden="true"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 8h10M9 4l4 4-4 4"/></svg></span></a>
+            <a class="btn btn-primary" href="#leadForm">Get My Free AI Visibility Read<span class="arr" aria-hidden="true"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 8h10M9 4l4 4-4 4"/></svg></span></a>
             <a class="btn btn-line" href="#work">See My Work</a>
           </div>
           <p class="note" data-in>No obligation. A short, plain-English read on where you stand in Google and in AI answers.</p>
@@ -421,13 +428,10 @@ footer{border-top:1.5px solid var(--ink);padding-block:48px 32px;overflow:hidden
     <div class="svc-top">
       <div class="sec-head">
         <span class="label"><b>01</b>What I do</span>
-        <h2 class="h2" data-split><span class="hv">Search Work for the Way</span> <span class="sv hl">Buyers Look Now</span></h2>
-        <p data-fade>People still search Google, and more of them now ask ChatGPT, Perplexity and Google's AI Overviews. I build for both.</p>
-      </div>
-      <div class="mini-stats" data-fade>
+        <h2 class="h2" data-split><span class="hv">Search Work for the Way</span> <span class="sv hl">Buyers Look Now</span></h2></div><div class="svc-side"><p data-fade>People still search Google, and more of them now ask ChatGPT, Perplexity and Google's AI Overviews. I build for both.</p><div class="mini-stats" data-fade>
         <div><b><span data-count="40">40</span><sup>%</sup></b><span>less content production time with AI (approx.)</span></div>
         <div><b><span data-count="6">6</span></b><span>team playbooks written and turned into AI skills</span></div>
-      </div>
+      </div></div>
     </div>
     <div class="svc-grid">
       <article class="svc" data-card>
@@ -533,7 +537,7 @@ footer{border-top:1.5px solid var(--ink);padding-block:48px 32px;overflow:hidden
       <div class="xp-line" aria-hidden="true"><i id="xpFill"></i></div>
 
       <article class="job">
-        <div class="job-head"><span class="when">Aug 2024 to Present</span><h3><span>Marketing Specialist</span></h3><p class="org">Danner Enterprises, Vacation Rental Marketing</p></div>
+        <div class="job-head"><span class="when">Aug 2024 to Present</span><h3><span>Marketing Specialist</span></h3><p class="org">Vacation Rental Marketing</p></div>
         <ul>
           <li>Run end-to-end SEO and GEO for a multi-property vacation rental portfolio: content strategy, on-page work and Core Web Vitals.</li>
           <li>Manage Google Business Profiles across the property roster with NAP consistency and citation cleanup.</li>
@@ -553,7 +557,6 @@ footer{border-top:1.5px solid var(--ink);padding-block:48px 32px;overflow:hidden
           <li><span class="new">New</span><b>Wrote the team's six standard procedures</b> (blog creation, topic clusters, metas and H1s, website audits, schema, client onboarding) and turned each into an AI skill the team runs.</li>
           <li><span class="new">New</span><b>Built an AI quality gate:</b> deliverables are checked by two independent AI reviewers before they go to a client.</li>
           <li><span class="new">New</span><b>Automated monitoring:</b> daily priority-task sweeps, weekly site checks (phone links, forms, GA4, Search Console, schema), content decay checks and security scans.</li>
-          <li><span class="new">New</span><b>Send screenshot-backed fix requests</b> to an outside development team, and review redesigns before they go to clients.</li>
           <li><span class="new">New</span><b>Design and build animated websites:</b> redesign mockups and prototypes with scroll-driven motion, interactive 3D globes, animated illustrations and smooth scrolling.</li>
           <li>Senior SEO lead: keyword strategy, technical audits, link development and CRO testing.</li>
           <li>Pioneered the agency's AI workflow integration, cutting content production time by roughly 40 percent without losing quality.</li>
@@ -581,7 +584,7 @@ footer{border-top:1.5px solid var(--ink);padding-block:48px 32px;overflow:hidden
 
 <section class="sec sec-alt" id="work">
   <div class="wrap">
-    <div class="sec-head">
+    <div class="sec-head split">
       <span class="label"><b>04</b>Selected work</span>
       <h2 class="h2" data-split><span class="hv">Sites I Designed</span> <span class="sv hl">and Fixed</span></h2>
       <p data-fade>Project examples from my agency work.</p>
@@ -624,20 +627,20 @@ footer{border-top:1.5px solid var(--ink);padding-block:48px 32px;overflow:hidden
         <li><a href="https://www.kindhomesolutions.co/" target="_blank" rel="noopener">kindhomesolutions.co<svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M4 10l6-6M5 4h5v5"/></svg></a></li>
         <li><a href="https://www.infintechdesigns.com/web-design-seo/" target="_blank" rel="noopener">infintechdesigns.com/web-design-seo<svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M4 10l6-6M5 4h5v5"/></svg></a></li>
       </ul></div>
-      <div data-fade><h3>Other Sites I Have Worked On</h3><ul>
+      <div data-fade><h3>Vacation Rental and Hospitality Sites</h3><ul><li><a href="https://thousandhillsvacations.com/" target="_blank" rel="noopener">thousandhillsvacations.com<svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M4 10l6-6M5 4h5v5"/></svg></a></li><li><a href="https://www.thousandhillsresorthotel.com/" target="_blank" rel="noopener">thousandhillsresorthotel.com<svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M4 10l6-6M5 4h5v5"/></svg></a></li><li><a href="https://talltimbersvacations.com/" target="_blank" rel="noopener">talltimbersvacations.com<svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M4 10l6-6M5 4h5v5"/></svg></a></li><li><a href="https://www.vacationstar.com/" target="_blank" rel="noopener">vacationstar.com<svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M4 10l6-6M5 4h5v5"/></svg></a></li><li><a href="https://rocklane.com/" target="_blank" rel="noopener">rocklane.com<svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M4 10l6-6M5 4h5v5"/></svg></a></li><li><a href="https://www.vacationbranson.com/" target="_blank" rel="noopener">vacationbranson.com<svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M4 10l6-6M5 4h5v5"/></svg></a></li><li><a href="https://bransonshowtickets.com/" target="_blank" rel="noopener">bransonshowtickets.com<svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M4 10l6-6M5 4h5v5"/></svg></a></li></ul></div><div class="wide" data-fade><h3>Home Service and Local Business Sites</h3><ul>
         <li><a href="https://www.bigeasyroofing.com/" target="_blank" rel="noopener">bigeasyroofing.com<svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M4 10l6-6M5 4h5v5"/></svg></a></li>
         <li><a href="https://www.turnkeyroofers.com/" target="_blank" rel="noopener">turnkeyroofers.com<svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M4 10l6-6M5 4h5v5"/></svg></a></li>
         <li><a href="https://www.bigeasyroofteam.com/" target="_blank" rel="noopener">bigeasyroofteam.com<svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M4 10l6-6M5 4h5v5"/></svg></a></li>
         <li><a href="https://cali.solar/" target="_blank" rel="noopener">cali.solar<svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M4 10l6-6M5 4h5v5"/></svg></a></li>
-        <li><a href="https://www.harmoniahealthsolutions.com/" target="_blank" rel="noopener">harmoniahealthsolutions.com<svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M4 10l6-6M5 4h5v5"/></svg></a></li>
-      </ul></div>
+        <li><a href="http://harmoniahealthsolutions.com/" target="_blank" rel="noopener">harmoniahealthsolutions.com<svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M4 10l6-6M5 4h5v5"/></svg></a></li>
+      <li><a href="https://www.bigeasyroofers.com/" target="_blank" rel="noopener">bigeasyroofers.com<svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M4 10l6-6M5 4h5v5"/></svg></a></li><li><a href="https://www.bigeasydemolition.com/" target="_blank" rel="noopener">bigeasydemolition.com<svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M4 10l6-6M5 4h5v5"/></svg></a></li><li><a href="https://www.bigeasyelectricians.com/" target="_blank" rel="noopener">bigeasyelectricians.com<svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M4 10l6-6M5 4h5v5"/></svg></a></li><li><a href="https://www.bigeasyairconditioning.com/" target="_blank" rel="noopener">bigeasyairconditioning.com<svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M4 10l6-6M5 4h5v5"/></svg></a></li><li><a href="https://www.bigeasyironworks.com/" target="_blank" rel="noopener">bigeasyironworks.com<svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M4 10l6-6M5 4h5v5"/></svg></a></li><li><a href="https://www.bigeasyasphalt.com/" target="_blank" rel="noopener">bigeasyasphalt.com<svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M4 10l6-6M5 4h5v5"/></svg></a></li><li><a href="https://www.bigeasysod.com/" target="_blank" rel="noopener">bigeasysod.com<svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M4 10l6-6M5 4h5v5"/></svg></a></li><li><a href="https://www.selectgaragedoorservice.com/" target="_blank" rel="noopener">selectgaragedoorservice.com<svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M4 10l6-6M5 4h5v5"/></svg></a></li><li><a href="https://www.tnstandard.com/" target="_blank" rel="noopener">tnstandard.com<svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M4 10l6-6M5 4h5v5"/></svg></a></li><li><a href="https://www.turnkeyroofingteam.com/" target="_blank" rel="noopener">turnkeyroofingteam.com<svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M4 10l6-6M5 4h5v5"/></svg></a></li><li><a href="https://www.istc.net/" target="_blank" rel="noopener">istc.net<svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M4 10l6-6M5 4h5v5"/></svg></a></li><li><a href="https://www.ikerdlaw.com/" target="_blank" rel="noopener">ikerdlaw.com<svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M4 10l6-6M5 4h5v5"/></svg></a></li><li><a href="https://smilebliss.com/" target="_blank" rel="noopener">smilebliss.com<svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M4 10l6-6M5 4h5v5"/></svg></a></li><li><a href="https://texaswebdesign.com/" target="_blank" rel="noopener">texaswebdesign.com<svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M4 10l6-6M5 4h5v5"/></svg></a></li></ul></div>
     </div>
   </div>
 </section>
 
 <section class="sec" aria-labelledby="certH">
   <div class="wrap">
-    <div class="sec-head" style="margin-bottom:56px"><span class="label"><b>05</b>Certifications</span><h2 class="h2" id="certH" data-split><span class="hv">Certified Across the</span> <span class="sv hl">Marketing Stack</span></h2></div>
+    <div class="sec-head split" style="margin-bottom:56px"><span class="label"><b>05</b>Certifications</span><h2 class="h2" id="certH" data-split><span class="hv">Certified Across the</span> <span class="sv hl">Marketing Stack</span></h2><p data-fade>Six certifications covering customer value, analytics, customer acquisition, search marketing, testing and Semrush.</p></div>
     <div class="certs">
       <div class="cert" data-fade><span class="seal"><img src="../img/customer-value-optimization.png" alt="" width="64" height="64"></span>Customer Value Optimization</div>
       <div class="cert" data-fade><span class="seal"><img src="../img/analytics-data-specialist.png" alt="" width="64" height="64"></span>Analytics and Data</div>
@@ -685,7 +688,7 @@ footer{border-top:1.5px solid var(--ink);padding-block:48px 32px;overflow:hidden
   </div>
 </footer>
 
-<div class="mcta" id="mcta"><a class="btn btn-primary" href="#contact">Get My Free AI Visibility Read</a></div>
+<div class="mcta" id="mcta"><a class="btn btn-primary" href="#leadForm">Get My Free AI Visibility Read</a></div>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
@@ -924,5 +927,6 @@ footer{border-top:1.5px solid var(--ink);padding-block:48px 32px;overflow:hidden
   });
 })();
 </script>
+<script>document.addEventListener("click",function(e){var a=e.target.closest('a[href="#leadForm"]');if(!a)return;setTimeout(function(){var i=document.getElementById("f-name");if(i)i.focus({preventScroll:true});},1400);});</script>
 </body>
 </html>
